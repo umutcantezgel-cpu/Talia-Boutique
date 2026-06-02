@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import * as motion from "motion/react-client";
+import { AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 
 export function GlobalLoader() {
@@ -17,41 +18,39 @@ export function GlobalLoader() {
     }
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 1500);
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  if (!isLoading) return null;
-
   return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="fixed inset-0 z-[999] flex items-center justify-center bg-bg-primary"
-    >
-      <motion.div
-        animate={{ 
-          rotate: 360,
-          scale: [1, 1.1, 1]
-        }}
-        transition={{ 
-          rotate: { duration: 2, ease: "linear", repeat: Infinity },
-          scale: { duration: 1, ease: "easeInOut", repeat: Infinity }
-        }}
-        className="flex items-center justify-center"
-      >
-        <svg 
-          width="48" 
-          height="48" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-primary opacity-80"
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          key="curtain"
+          initial={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-primary overflow-hidden pointer-events-auto"
         >
-          <path d="M12.4 2.1C18 2.1 22.5 6.6 22.5 12.2C22.5 17.8 18 22.3 12.4 22.3C10.7 22.3 9.1 21.9 7.7 21.1C11.5 20.3 14.4 16.9 14.4 12.8C14.4 8.7 11.5 5.3 7.7 4.5C9.1 3.7 10.7 3.3 12.4 2.1Z" fill="currentColor"/>
-        </svg>
-      </motion.div>
-    </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="flex flex-col items-center justify-center"
+          >
+            <span className="font-headline-lg text-4xl md:text-5xl lg:text-7xl text-surface uppercase tracking-[0.2em] font-serif mb-6 text-center">
+              Talia Boutique
+            </span>
+            <motion.div 
+               initial={{ width: 0 }}
+               animate={{ width: "120px" }}
+               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+               className="h-[1px] bg-surface/50"
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

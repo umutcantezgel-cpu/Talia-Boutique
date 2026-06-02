@@ -35,7 +35,7 @@ export function SuccessGlow() {
               y: pos.y,
             }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute left-1/2 top-1/2 w-2 h-2 bg-[#FDFCFB] rounded-full"
+            className="absolute left-1/2 top-1/2 w-2 h-2 bg-surface rounded-full"
           />
         ))}
       </motion.div>

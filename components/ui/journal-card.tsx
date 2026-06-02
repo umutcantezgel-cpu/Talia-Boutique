@@ -3,6 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/language-context";
+import { getTranslations } from "@/lib/i18n/translations";
 
 import { BlurImagePlaceholder } from "@/components/ui/blur-image";
 
@@ -27,6 +29,8 @@ export function JournalCard({
     videoUrl,
     className
 }: JournalCardProps) {
+    const { language } = useLanguage();
+    const t = getTranslations(language).journal;
 
     return (
         <article 
@@ -46,7 +50,7 @@ export function JournalCard({
                 </Link>
                 <p className="font-body-md text-text-secondary leading-relaxed mb-4 flex-grow">{excerpt}</p>
                 <Link href={href} className="font-label-md text-primary uppercase tracking-widest flex items-center gap-2 group-hover:text-on-surface transition-colors w-fit">
-                    Weiterlesen <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    {t.readMore} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </Link>
             </div>
         </article>

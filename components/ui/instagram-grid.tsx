@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import { BlurImagePlaceholder } from "@/components/ui/blur-image";
 
 interface InstagramPost {
     id: string;
@@ -41,14 +42,18 @@ export function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
                         </div>
                     ) : (
                         <>
-                            <Image 
-                                src={post.image} 
-                                alt="Instagram Post" 
-                                fill
-                                sizes="(max-width: 768px) 50vw, 25vw"
-                                referrerPolicy="no-referrer"
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
+                            {post.image ? (
+                                <Image 
+                                    src={post.image} 
+                                    alt="Instagram Post" 
+                                    fill
+                                    sizes="(max-width: 768px) 50vw, 25vw"
+                                    referrerPolicy="no-referrer"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                            ) : (
+                                <BlurImagePlaceholder seed={`ig-${post.id}`} icon="photo_camera" />
+                            )}
                             <div className="absolute inset-0 bg-bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <span className="material-symbols-outlined text-primary text-[32px]">favorite</span>
                             </div>

@@ -37,7 +37,7 @@ export function SneakPeekCard({ peek, idx }: SneakPeekCardProps) {
          <motion.span 
            animate={isWished ? { scale: [1, 1.3, 1] } : { scale: 1 }}
            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-           className={`material-symbols-outlined text-[20px] ${isWished ? 'fill-current text-[#E8C5C9]' : ''}`} 
+           className={`material-symbols-outlined text-[20px] ${isWished ? 'fill-current text-error-container' : ''}`} 
            style={isWished ? { fontVariationSettings: "'FILL' 1" } : {}}
          >
            favorite
@@ -46,18 +46,18 @@ export function SneakPeekCard({ peek, idx }: SneakPeekCardProps) {
        
        <BlurImagePlaceholder seed={peek.id} />
        
-       <div className="absolute inset-0 bg-gradient-to-t from-[#4A3F41]/90 via-[#4A3F41]/40 to-transparent relative z-10" />
+       <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent relative z-10" />
        
        <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
-          <h3 className="font-headline-md text-2xl text-[#FDFCFB] mb-2 font-serif group-hover:-translate-y-2 transition-transform duration-500">
+          <h3 className="font-headline-md text-2xl text-surface mb-2 font-serif group-hover:-translate-y-2 transition-transform duration-500">
             {peek.title}
           </h3>
-          <p className="font-body-md text-[#E8DCC4] mb-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500 delay-100">
+          <p className="font-body-md text-surface-variant mb-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500 delay-100">
             {peek.subtitle}
           </p>
           
           <div className="overflow-hidden">
-            <p className="font-label-md uppercase tracking-widest text-[#E8DCC4] translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-200">
+            <p className="font-label-md uppercase tracking-widest text-surface-variant translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-200">
               {peek.date}
             </p>
           </div>

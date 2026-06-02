@@ -1,34 +1,41 @@
+"use client";
+
 import * as React from "react";
 import { JournalCard } from "@/components/ui/journal-card";
-import { MOCK_JOURNAL } from "@/lib/mock-data";
+import { useLanguage } from '@/contexts/language-context';
+import { getTranslations } from '@/lib/i18n/translations';
+import { JOURNAL_DATA } from "@/lib/i18n/journal-data";
 import * as motion from "motion/react-client";
 import { ClientSkeletonWrapper } from "@/components/ui/client-skeleton-wrapper";
 
 export default function JournalPage() {
+  const { language } = useLanguage();
+  const t = getTranslations(language).journal;
+  const articles = JOURNAL_DATA[language];
+
   return (
     <main className="pt-[140px] pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex-grow">
       <div className="text-center mb-16">
         <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-display-lg text-display-lg text-on-surface mb-4 font-serif"
+          className="font-headline-lg text-5xl md:text-7xl lg:text-[100px] mb-8 font-serif leading-none"
         >
-          Das Nur Journal
+          {t.title}
         </motion.h1>
         <motion.p 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto"
+          transition={{ delay: 0.2 }}
+          className="font-body-md text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto"
         >
-          Inspirationen, tiefe Einblicke und Geschichten rund um den Islamic Lifestyle, Spiritualität und Handwerkskunst.
+          {t.subtitle}
         </motion.p>
       </div>
 
-      <ClientSkeletonWrapper count={6} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {MOCK_JOURNAL.map((article, idx) => (
+      <ClientSkeletonWrapper count={4} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {articles.map((article, idx) => (
             <motion.div
               key={article.id}
               initial={{ opacity: 0, y: 40 }}

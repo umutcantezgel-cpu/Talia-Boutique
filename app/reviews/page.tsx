@@ -2,6 +2,8 @@
 
 import React from 'react';
 import * as motion from 'motion/react-client';
+import { useLanguage } from "@/contexts/language-context";
+import { getTranslations } from "@/lib/i18n/translations";
 
 const MOCK_REVIEWS = [
   { id: 1, name: "Aisha M.", text: "Der Gebetsteppich hat eine unglaubliche Qualität. Er ist jeden Tag in Benutzung und sieht aus wie neu. Die Handarbeit aus Istanbul ist wirklich spürbar.", rating: 5, date: "12. Mai 2026", type: "text" },
@@ -13,12 +15,15 @@ const MOCK_REVIEWS = [
 ];
 
 export default function ReviewsPage() {
+  const { language } = useLanguage();
+  const t = getTranslations(language).reviews;
+
   return (
     <main className="pt-[140px] pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex-grow min-h-[70vh]">
       <div className="text-center mb-16">
-        <h1 className="font-display-lg text-4xl lg:text-6xl text-on-surface mb-6 font-serif">Kundenstimmen</h1>
+        <h1 className="font-display-lg text-4xl lg:text-6xl text-on-surface mb-6 font-serif">{t.title}</h1>
         <p className="font-body-md text-text-secondary max-w-2xl mx-auto">
-          Die Erfahrungen unserer Community. Entdecke, wie unsere handgefertigten Stücke aus Istanbul ihren Platz in EUREM Alltag finden.
+          {t.desc}
         </p>
       </div>
 

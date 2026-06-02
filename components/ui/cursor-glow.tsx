@@ -48,7 +48,7 @@ export function CursorGlow() {
         }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-64 h-64 rounded-full bg-[#E8DCC4] mix-blend-screen pointer-events-none z-[9998] blur-[60px]"
+        className="fixed top-0 left-0 w-64 h-64 rounded-full bg-primary-container mix-blend-screen pointer-events-none z-[9998] blur-[60px]"
         animate={{
           x: mousePosition.x - 128,
           y: mousePosition.y - 128,

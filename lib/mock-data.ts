@@ -69,10 +69,10 @@ export const MOCK_FAQS = [
 ];
 
 export const MOCK_INSTAGRAM = [
-    { id: "ig1", image: "https://picsum.photos/seed/talia1/600/600", link: "#" },
-    { id: "ig2", image: "https://picsum.photos/seed/talia2/600/600", link: "#" },
-    { id: "ig3", image: "https://picsum.photos/seed/talia3/600/600", link: "#" },
-    { id: "ig4", image: "https://picsum.photos/seed/talia4/600/600", link: "#" },
+    { id: "ig1", image: "", link: "#" },
+    { id: "ig2", image: "", link: "#" },
+    { id: "ig3", image: "", link: "#" },
+    { id: "ig4", image: "", link: "#" },
 ];
 
 export const MOCK_JOURNAL: JournalArticle[] = [
@@ -82,8 +82,8 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Wie gedeckte Farben und Cashmere unsere Garderobe transformieren.",
         content: "Detailed content would go here...",
         category: "Kollektion",
-        imageUrl: "https://picsum.photos/seed/fall/1200/800",
-        videoUrl: "/assets/instagram/1.mp4",
+        imageUrl: "",
+        videoUrl: "",
         imageAlt: "Herbstkollektion Talia",
         publishedAt: "2026-09-10",
         author: "Talia Editorial"
@@ -94,8 +94,8 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Warum Wetzlar der perfekte Ort für exklusive Fashion ist.",
         content: "Detailed content would go here...",
         category: "Behind the Scenes",
-        imageUrl: "https://picsum.photos/seed/wetzlar/1200/800",
-        videoUrl: "/assets/instagram/2.mp4",
+        imageUrl: "",
+        videoUrl: "",
         imageAlt: "Wetzlar Boutique",
         publishedAt: "2026-08-18",
         author: "Talia Editorial"
@@ -106,8 +106,8 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Zeitlose Eleganz für jeden Anlass.",
         content: "Detailed content would go here...",
         category: "Style Guide",
-        imageUrl: "https://picsum.photos/seed/signature/1200/800",
-        videoUrl: "/assets/instagram/3.mp4",
+        imageUrl: "",
+        videoUrl: "",
         imageAlt: "Signature Style",
         publishedAt: "2026-07-22",
         author: "Talia Editorial"
@@ -118,8 +118,8 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Warum wir bei unseren Stoffen keine Abstriche machen.",
         content: "Detailed content would go here...",
         category: "Material",
-        imageUrl: "https://picsum.photos/seed/cashmere/1200/800",
-        videoUrl: "/assets/instagram/4.mp4",
+        imageUrl: "",
+        videoUrl: "",
         imageAlt: "Premium Cashmere",
         publishedAt: "2026-07-05",
         author: "Talia Editorial"

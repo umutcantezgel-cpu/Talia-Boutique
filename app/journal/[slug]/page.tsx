@@ -1,20 +1,27 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
-import { MOCK_JOURNAL } from "@/lib/mock-data";
+import { useLanguage } from "@/contexts/language-context";
+import { JOURNAL_DATA } from "@/lib/i18n/journal-data";
 import { ReadingProgress } from "@/components/ui/reading-progress";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { BlurImagePlaceholder } from "@/components/ui/blur-image";
 import { ShareButton } from "@/components/ui/share-button";
+import ReactMarkdown from "react-markdown";
 
-export async function generateStaticParams() {
-  return MOCK_JOURNAL.map((article) => ({
-    slug: article.id,
-  }));
-}
+export default function JournalDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { language } = useLanguage();
+  const articles = JOURNAL_DATA[language];
+  const [slug, setSlug] = React.useState<string | null>(null);
 
-export default async function JournalDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const slug = (await params).slug;
-  const article = MOCK_JOURNAL.find(p => p.id === slug) || MOCK_JOURNAL[0];
+  React.useEffect(() => {
+    params.then((p) => setSlug(p.slug));
+  }, [params]);
+
+  if (!slug) return null;
+
+  const article = articles.find(p => p.id === slug) || articles[0];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -24,7 +31,7 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
     "abstract": article.excerpt,
     "author": {
       "@type": "Organization",
-      "name": "Nur"
+      "name": "Talia Boutique"
     }
   };
 
@@ -34,7 +41,7 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto mb-16 relative">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-          <Breadcrumbs items={[{ label: 'Journal', href: '/suche' }, { label: article.category }]} />
+          <Breadcrumbs items={[{ label: 'Journal', href: '/journal' }, { label: article.category }]} />
           <ShareButton title={article.title} text={article.excerpt} />
         </div>
         <div className="text-center">
@@ -55,12 +62,11 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
       
       <div className="w-full aspect-[21/9] rounded-[24px] overflow-hidden mb-16 shadow-pink bg-surface-variant flex items-center justify-center border border-outline-variant relative">
         <BlurImagePlaceholder seed={article.id} icon="photo_library" />
-        <div className="absolute inset-0 bg-[#E8DCC4] mix-blend-multiply opacity-10 z-10"></div>
+        <div className="absolute inset-0 bg-[#8B5CF6] mix-blend-multiply opacity-10 z-10"></div>
       </div>
 
       <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:font-medium prose-p:font-sans prose-p:text-text-secondary prose-p:leading-relaxed prose-a:text-primary">
-         <p>{article.content}</p>
-         <p>Dies ist ein Platzhalter für den Haupttext. Die Inhalte für das Nur Editorial werden demnächst vollständig veröffentlicht, zusammen mit unserem ersten exklusiven Drop.</p>
+         <ReactMarkdown>{article.content}</ReactMarkdown>
          
          <div className="mt-16 pt-8 border-t border-surface-variant text-center">
             <Link href="/journal" className="inline-flex items-center gap-2 text-primary hover:text-on-surface transition-colors font-label-md tracking-widest uppercase">

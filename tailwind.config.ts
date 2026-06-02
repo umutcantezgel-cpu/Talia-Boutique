@@ -13,7 +13,7 @@ const config: Config = {
           DEFAULT: "var(--color-primary)",
           container: "var(--color-primary-container)",
         },
-        "pink-highlight": "var(--color-pink-highlight)",
+        "purple-highlight": "var(--color-purple-highlight)",
       },
       fontFamily: {
         sans: ["var(--font-montserrat)", "sans-serif"],

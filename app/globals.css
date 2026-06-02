@@ -2,55 +2,55 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-primary: #1A1A1A;
-  --color-on-primary: #FDFCFB;
-  --color-primary-container: #333333;
+  --color-primary: #5E2C85; /* Premium Deep Purple */
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #8B5CF6; /* Joyful Vibrant Purple */
   --color-on-primary-container: #FFFFFF;
   
-  --color-secondary: #4A4A4A;
+  --color-secondary: #7C3AED;
   --color-on-secondary: #FFFFFF;
-  --color-secondary-container: #E5E5E5;
-  --color-on-secondary-container: #1A1A1A;
+  --color-secondary-container: #EDE9FE;
+  --color-on-secondary-container: #4C1D95;
   
-  --color-tertiary: #8C7D7F;
-  --color-on-tertiary: #FFFFFF;
-  --color-tertiary-container: #D4C2C3;
-  --color-on-tertiary-container: #22191B;
+  --color-tertiary: #A78BFA;
+  --color-on-tertiary: #2E1065;
+  --color-tertiary-container: #F5F3FF;
+  --color-on-tertiary-container: #2E1065;
   
-  --color-surface: #FDFCFB;
-  --color-surface-dim: #F2EFEA;
+  --color-surface: #FFFFFF;
+  --color-surface-dim: #F5F3FF;
   --color-surface-bright: #FFFFFF;
   --color-surface-container-lowest: #FFFFFF;
-  --color-surface-container-low: #FAF7F2;
-  --color-surface-container: #F2EFEA;
-  --color-surface-container-high: #EBE7E0;
-  --color-surface-container-highest: #E5E0D8;
-  --color-on-surface: #1A1A1A;
-  --color-on-surface-variant: #4A4A4A;
-  --color-inverse-surface: #1A1A1A;
-  --color-inverse-on-surface: #FDFCFB;
+  --color-surface-container-low: #FAFAFA;
+  --color-surface-container: #F5F3FF;
+  --color-surface-container-high: #EDE9FE;
+  --color-surface-container-highest: #DDD6FE;
+  --color-on-surface: #2E1065; /* Dark Aubergine text */
+  --color-on-surface-variant: #4C1D95;
+  --color-inverse-surface: #2E1065;
+  --color-inverse-on-surface: #FFFFFF;
   
-  --color-outline: #CCCCCC;
-  --color-outline-variant: #E5E5E5;
+  --color-outline: #C4B5FD;
+  --color-outline-variant: #EDE9FE;
   
   --color-error: #93000A;
   --color-on-error: #FFFFFF;
   --color-error-container: #FFDAD6;
   --color-on-error-container: #410002;
   
-  --color-primary-fixed: #E5E5E5;
-  --color-primary-fixed-dim: #CCCCCC;
-  --color-on-primary-fixed: #1A1A1A;
-  --color-on-primary-fixed-variant: #333333;
+  --color-primary-fixed: #EDE9FE;
+  --color-primary-fixed-dim: #C4B5FD;
+  --color-on-primary-fixed: #2E1065;
+  --color-on-primary-fixed-variant: #4C1D95;
   
-  --color-background: #FDFCFB;
-  --color-on-background: #1A1A1A;
-  --color-surface-variant: #F2EFEA;
+  --color-background: #FFFFFF;
+  --color-on-background: #2E1065;
+  --color-surface-variant: #F5F3FF;
   
-  --color-bg-primary: #FDFCFB;
-  --color-bg-secondary: #FAF7F2;
-  --color-pink-highlight: #1A1A1A;
-  --color-text-secondary: #737373;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F3FF;
+  --color-purple-highlight: #8B5CF6;
+  --color-text-secondary: #6B7280; /* Neutral gray for less critical text */
 
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-montserrat), sans-serif;
@@ -112,14 +112,14 @@
     font-weight: 600;
   }
   
-  .pink-shadow {
-    box-shadow: 0 10px 30px -10px rgba(214, 163, 169, 0.15);
+  .purple-shadow {
+    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
   }
-  .pink-shadow-hover {
+  .purple-shadow-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .pink-shadow-hover:hover {
-    box-shadow: 0 12px 35px -10px rgba(214, 163, 169, 0.25);
+  .purple-shadow-hover:hover {
+    box-shadow: 0 12px 35px -10px rgba(139, 92, 246, 0.25);
     transform: translateY(-4px);
   }
   .glass-panel {
@@ -142,7 +142,7 @@
   background: var(--color-bg-primary); 
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-pink-highlight); 
+  background: var(--color-purple-highlight); 
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

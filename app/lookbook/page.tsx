@@ -1,10 +1,14 @@
 "use client";
 
+"use client";
+
 import React, { useRef } from 'react';
 import * as motion from 'motion/react-client';
 import Link from 'next/link';
 import { BlurImagePlaceholder } from '@/components/ui/blur-image';
-import { ScrollReveal, TextMask } from '@/components/ui/scroll-reveal';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { useLanguage } from '@/contexts/language-context';
+import { getTranslations } from '@/lib/i18n/translations';
 
 const DRAG_ITEMS = [
   { id: 1, title: "Ramadan Nights", top: "10%", left: "20%", width: "400px", height: "500px", zIndex: 10, product: "Midnight Satin" },
@@ -16,6 +20,8 @@ const DRAG_ITEMS = [
 ];
 
 export default function LookbookPage() {
+  const { language } = useLanguage();
+  const t = getTranslations(language).lookbook;
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -25,23 +31,23 @@ export default function LookbookPage() {
       <div className="absolute top-0 left-0 w-full p-8 pt-[140px] z-50 pointer-events-none flex flex-col md:flex-row justify-between items-start md:items-center px-margin-mobile md:px-margin-desktop">
         <div>
           <h1 className="font-display-lg text-5xl md:text-7xl text-on-surface font-serif leading-none drop-shadow-lg">
-            The Archive
+            {t.title}
           </h1>
           <p className="font-body-md text-text-secondary max-w-sm mt-4 backdrop-blur-sm bg-bg-primary/30 p-2 rounded-lg">
-            Eine interaktive Galerie unserer Ästhetik. Ziehe (drag) die Bilder, um die Leinwand zu erkunden. Klicke auf die Hotspots für Produktdetails.
+            {t.subtitle}
           </p>
         </div>
         
         <div className="hidden md:flex items-center gap-4 animate-pulse">
            <span className="material-symbols-outlined text-primary text-3xl">swipe</span>
-           <span className="font-label-md uppercase tracking-widest text-primary text-xs">Drag to Explore</span>
+           <span className="font-label-md uppercase tracking-widest text-primary text-xs">{t.dragToExplore}</span>
         </div>
       </div>
 
       {/* Drag Canvas */}
       <div className="relative flex-grow w-full h-full overflow-hidden cursor-grab active:cursor-grabbing bg-surface-variant">
         {/* Subtle grid background */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#E8DCC4 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#8B5CF6 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
         <motion.div 
           ref={containerRef}

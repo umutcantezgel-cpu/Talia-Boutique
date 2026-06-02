@@ -7,19 +7,20 @@ import { cn } from "@/lib/utils";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 
-import { SearchModal } from "@/components/ui/search-modal";
 import { useLanguage, Language } from "@/contexts/language-context";
+import { getTranslations } from "@/lib/i18n/translations";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
 
   const closeButtonRef = React.useRef<HTMLButtonElement>(null);
   const openButtonRef = React.useRef<HTMLButtonElement>(null);
 
   const { language, setLanguage } = useLanguage();
+  const t = getTranslations(language).nav;
   const [isLangOpen, setIsLangOpen] = React.useState(false);
   const langRef = React.useRef<HTMLDivElement>(null);
 
@@ -62,10 +63,8 @@ export function Header() {
   }, [isMobileMenuOpen]);
 
   const mainNavLinks = [
-    { href: "/shop", label: "Kollektionen" },
-    { href: "/journal", label: "Journal" },
-    { href: "/lookbook", label: "Lookbook" },
-    { href: "/geschenke-ratgeber", label: "Geschenke" },
+    { href: "/lookbook", label: t.lookbook },
+    { href: "/journal", label: t.journal },
   ];
 
   const supportLinks = [
@@ -77,61 +76,106 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-300",
+          "fixed top-0 w-full z-50 transition-all duration-500 ease-out",
           isScrolled
-            ? "bg-[#FDFCFB]/95 backdrop-blur-xl shadow-[0_1px_0_rgba(26,26,26,0.05)] py-4"
-            : "bg-transparent py-6 lg:py-8"
+            ? "bg-surface/80 backdrop-blur-2xl shadow-sm py-3"
+            : "bg-transparent py-8"
         )}
       >
         <nav className="flex justify-between items-center max-w-[1280px] mx-auto px-5 md:px-[64px]">
           
           {/* Logo (Left) */}
-          <Link
-            href="/"
-            className="flex-none flex items-center justify-center gap-3 group"
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
           >
-            <span className="font-headline-md text-2xl md:text-3xl font-medium text-[#1A1A1A] tracking-tight uppercase tracking-widest">
-              Talia Boutique
-            </span>
-          </Link>
+            <Magnetic>
+              <Link
+                href="/"
+                className="flex-none flex items-center justify-center gap-3 group"
+              >
+                <span className="font-headline-md text-2xl md:text-3xl font-medium text-primary tracking-tight uppercase tracking-widest transition-transform duration-500 group-hover:scale-105">
+                  Talia Boutique
+                </span>
+              </Link>
+            </Magnetic>
+          </motion.div>
 
           {/* Desktop Nav (Center) */}
-          <ul className="hidden lg:flex gap-10 items-center justify-center flex-1 mx-8 relative top-[2px]">
+          <motion.ul 
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 1.6 } }
+            }}
+            className="hidden lg:flex gap-10 items-center justify-center flex-1 mx-8 relative top-[2px]"
+          >
             {mainNavLinks.map((link) => {
               const isActive = (pathname.startsWith(link.href) && link.href !== "/") || pathname === link.href;
               return (
-                <li key={link.href} className="relative group">
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "font-label-md text-[11px] uppercase tracking-[0.2em] transition-all duration-300",
-                      isActive ? "text-[#1A1A1A] font-medium" : "text-[#1A1A1A]/50 hover:text-[#1A1A1A]"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                  {isActive && (
+                <motion.li 
+                  key={link.href} 
+                  className="relative group"
+                  variants={{
+                    hidden: { opacity: 0, y: -20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                  }}
+                >
+                  <Magnetic>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "font-label-md text-[11px] uppercase tracking-[0.2em] transition-all duration-300 py-6 block",
+                        isActive ? "text-on-surface font-medium" : "text-on-surface/50 hover:text-on-surface"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </Magnetic>
+                  
+                  {link.isDropdown && (
+                     <div className="absolute top-full left-1/2 -translate-x-1/2 w-[320px] bg-surface/95 backdrop-blur-xl border border-primary/10 shadow-xl rounded-2xl p-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-500 ease-out z-50">
+                        <div className="flex flex-col gap-3">
+                           <span className="font-label-sm text-primary uppercase tracking-widest text-[10px] mb-2">{link.label} Exklusiv</span>
+                           {link.subLinks?.map((subLink) => (
+                              <Link key={subLink.href} href={subLink.href} className="font-body-md text-on-surface/70 hover:text-primary transition-colors hover:translate-x-1 inline-block duration-300">
+                                 {subLink.label}
+                              </Link>
+                           ))}
+                        </div>
+                     </div>
+                  )}
+
+                  {isActive && !link.isDropdown && (
                     <motion.div 
                       layoutId="active-indicator"
-                      className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-full h-[1px] bg-[#1A1A1A]"
+                      className="absolute bottom-[18px] left-1/2 -translate-x-1/2 w-4 h-[2px] bg-primary rounded-full"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                </li>
+                </motion.li>
               );
             })}
-          </ul>
+          </motion.ul>
 
           {/* Desktop Actions (Right) */}
-          <div className="hidden lg:flex gap-6 items-center justify-end">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8, ease: "easeOut" }}
+            className="hidden lg:flex gap-4 items-center justify-end"
+          >
             {/* Language Switcher */}
-            <div className="relative" ref={langRef}>
+            <div className="relative ml-2" ref={langRef}>
               <button 
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors font-label-md text-[11px] uppercase tracking-widest flex items-center gap-1"
+                className="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary hover:bg-primary-container rounded-full transition-all duration-300 font-label-md text-[11px] uppercase tracking-widest shadow-md hover:purple-shadow"
               >
+                <span className="material-symbols-outlined text-[16px]">language</span>
                 {language}
-                <span className="material-symbols-outlined text-[16px] transition-transform duration-200" style={{ transform: isLangOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>expand_more</span>
+                <span className="material-symbols-outlined text-[14px] transition-transform duration-300" style={{ transform: isLangOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>expand_more</span>
               </button>
               
               <AnimatePresence>
@@ -140,7 +184,7 @@ export function Header() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full right-0 mt-4 py-2 w-24 bg-[#FDFCFB] border border-[#1A1A1A]/10 shadow-lg rounded-lg flex flex-col z-50"
+                    className="absolute top-full right-0 mt-4 py-2 w-24 bg-surface border border-on-surface/10 shadow-lg rounded-lg flex flex-col z-50"
                   >
                     {(["DE", "EN", "TR", "KU", "FA", "AR"] as Language[]).map((lang) => (
                       <button
@@ -151,7 +195,7 @@ export function Header() {
                         }}
                         className={cn(
                           "px-4 py-2 text-left font-label-md text-[11px] uppercase tracking-widest transition-colors",
-                          language === lang ? "text-[#1A1A1A] font-medium bg-[#1A1A1A]/5" : "text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-[#1A1A1A]/5"
+                          language === lang ? "text-primary font-medium bg-primary/5" : "text-on-surface/60 hover:text-primary hover:bg-primary/5"
                         )}
                       >
                         {lang}
@@ -162,27 +206,21 @@ export function Header() {
               </AnimatePresence>
             </div>
 
-            <button onClick={() => setIsSearchOpen(true)} className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Suche">
-              <span className="material-symbols-outlined text-[24px]">search</span>
-            </button>
-            <Link href="/wunschzettel" className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Wunschzettel">
-              <span className="material-symbols-outlined text-[24px]">favorite</span>
-            </Link>
-            <Link href="/konto" className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Account">
-              <span className="material-symbols-outlined text-[24px]">person</span>
-            </Link>
-          </div>
+          </motion.div>
 
           {/* Mobile Hamburger Trigger */}
-          <button 
+          <motion.button 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
             ref={openButtonRef}
-            className="lg:hidden text-[#1A1A1A] p-2 -mr-2 hover:opacity-80 transition-opacity"
+            className="lg:hidden text-primary p-2 -mr-2 hover:opacity-80 transition-opacity"
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Menü öffnen"
             aria-expanded={isMobileMenuOpen}
           >
             <span className="material-symbols-outlined text-[32px]">menu</span>
-          </button>
+          </motion.button>
         </nav>
       </header>
 
@@ -199,7 +237,7 @@ export function Header() {
           >
             {/* Backdrop */}
             <div 
-              className="absolute inset-0 bg-[#22191b]/40 backdrop-blur-md"
+              className="absolute inset-0 bg-on-surface/40 backdrop-blur-md"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             
@@ -214,7 +252,7 @@ export function Header() {
             >
               {/* Header inside Menu */}
               <div className="flex justify-between items-center p-6 border-b border-surface-variant/50">
-                <span className="font-headline-md text-2xl font-serif text-on-surface italic">Menü</span>
+                <span className="font-headline-md text-2xl font-serif text-on-surface italic">{t.menu}</span>
                 <button 
                   ref={closeButtonRef}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -225,74 +263,47 @@ export function Header() {
                 </button>
               </div>
 
-                {/* Main Nav Links */}
-                <div className="flex flex-col px-6 py-8 gap-6 flex-1 overflow-y-auto w-full">
-                  {/* Search Bar in Mobile Menu */}
-                  <button 
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      setTimeout(() => setIsSearchOpen(true), 300);
-                    }}
-                    className="w-full flex items-center gap-3 bg-surface border border-outline-variant rounded-xl px-4 py-3 font-body-md text-text-secondary text-left hover:border-primary transition-colors focus:outline-none"
-                  >
-                    <span className="material-symbols-outlined text-[20px] opacity-70">search</span>
-                    Was suchst du?
-                  </button>
+                <motion.div 
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.05, delayChildren: 0.2 } }
+                  }}
+                  className="flex flex-col px-6 py-8 gap-6 flex-1 overflow-y-auto w-full"
+                >
                   
                   <div className="mt-2 flex flex-col gap-6">
-                    <Link href="/shop" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Kollektionen</Link>
-                    <Link href="/lookbook" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Lookbook</Link>
-                    <Link href="/journal" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
-                    <Link href="/geschenke-ratgeber" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Geschenke</Link>
-                    <Link href="/reviews" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Reviews</Link>
+                    <motion.div variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0 } }}>
+                      <Link href="/lookbook" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors block" onClick={() => setIsMobileMenuOpen(false)}>{t.lookbook}</Link>
+                    </motion.div>
+                    <motion.div variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0 } }}>
+                      <Link href="/journal" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors block" onClick={() => setIsMobileMenuOpen(false)}>{t.journal}</Link>
+                    </motion.div>
+                    <motion.div variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0 } }}>
+                      <Link href="/reviews" className="font-headline-md text-3xl font-serif text-on-surface hover:text-primary transition-colors block" onClick={() => setIsMobileMenuOpen(false)}>{t.reviews}</Link>
+                    </motion.div>
                   </div>
-
-                  <div className="h-px bg-surface-variant my-4 w-12" />
-
-                  {/* Secondary Links Array */}
-                  <div className="flex flex-col gap-4">
-                    <span className="font-label-sm text-primary uppercase tracking-widest text-xs">Die Boutique</span>
-                    <Link href="/about/entity" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Über uns</Link>
-                    <Link href="/creator" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Creator Program</Link>
-                    <Link href="/presse" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Presse & Medien</Link>
-                  </div>
-
-                  <div className="mt-4 flex flex-col gap-4">
-                    <span className="font-label-sm text-primary uppercase tracking-widest text-xs">Service</span>
-                    <Link href="/kontakt" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Kontakt & FAQ</Link>
-                    <Link href="/tracking" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Bestellstatus</Link>
-                    <Link href="/versand" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Versand</Link>
-                    <Link href="/pflege" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pflegehinweise</Link>
-                  </div>
-                </div>
+                </motion.div>
 
               {/* Action Icons Footer */}
-              <div className="p-6 pb-10 border-t border-surface-variant/50 flex justify-around items-center bg-[#FAF7F2]">
+              <div className="p-6 pb-10 border-t border-surface-variant flex justify-center items-center bg-surface-variant">
                 <button onClick={() => {
                     const langs = ["DE", "EN", "TR", "KU", "FA", "AR"] as Language[];
                     const nextLangIdx = (langs.indexOf(language) + 1) % 6;
                     setLanguage(langs[nextLangIdx]);
                   }}
-                  className="flex flex-col items-center gap-2 text-text-secondary hover:text-primary transition-colors" aria-label="Sprache"
+                  className="flex items-center gap-3 px-6 py-3 bg-primary text-on-primary hover:bg-primary-container rounded-full transition-all duration-300 font-label-md uppercase tracking-widest shadow-md hover:purple-shadow w-full justify-center" aria-label="Sprache wechseln"
                 >
-                  <span className="material-symbols-outlined text-[28px]" aria-hidden="true">language</span>
-                  <span className="text-[10px] font-label-md uppercase tracking-wider">{language}</span>
+                  <span className="material-symbols-outlined text-[20px]" aria-hidden="true">language</span>
+                  <span className="text-[12px]">{language} — {t.changeLanguage}</span>
                 </button>
-                <Link href="/wunschzettel" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center gap-2 text-text-secondary hover:text-primary transition-colors" aria-label="Dein Wunschzettel">
-                  <span className="material-symbols-outlined text-[28px]" aria-hidden="true">favorite</span>
-                  <span className="text-[10px] font-label-md uppercase tracking-wider">Wunsch</span>
-                </Link>
-                <Link href="/konto" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center gap-2 text-text-secondary hover:text-primary transition-colors" aria-label="Dein Profil">
-                  <span className="material-symbols-outlined text-[28px]" aria-hidden="true">person</span>
-                  <span className="text-[10px] font-label-md uppercase tracking-wider">Profil</span>
-                </Link>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }

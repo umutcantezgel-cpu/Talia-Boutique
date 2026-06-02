@@ -44,10 +44,10 @@ export function InteractiveMap() {
   const [activePoint, setActivePoint] = useState<string | null>(null);
 
   return (
-    <div className="relative w-full aspect-[16/9] bg-[#4A3F41] rounded-[40px] overflow-hidden shadow-pink group">
+    <div className="relative w-full aspect-[16/9] bg-primary rounded-[40px] overflow-hidden shadow-pink group">
       {/* Abstract Map Background */}
       <div className="absolute inset-0 opacity-20 transition-transform duration-1000 group-hover:scale-105">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-none stroke-[#E8DCC4] stroke-[0.2]">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-none stroke-primary-container stroke-[0.2]">
           {/* Topographical / Map lines abstract */}
           <path d="M 0 50 Q 25 25 50 50 T 100 50" />
           <path d="M 0 70 Q 35 45 60 70 T 100 70" />
@@ -70,12 +70,12 @@ export function InteractiveMap() {
           onMouseLeave={() => setActivePoint(null)}
         >
           {/* Dot */}
-          <div className="relative z-20 w-6 h-6 -translate-x-1/2 -translate-y-1/2 bg-[#E8DCC4] rounded-full border-4 border-[#4A3F41] cursor-pointer hover:scale-125 transition-transform duration-300 shadow-[0_0_20px_rgba(232,220,196,0.6)] flex items-center justify-center">
+          <div className="relative z-20 w-6 h-6 -translate-x-1/2 -translate-y-1/2 bg-primary-container rounded-full border-4 border-primary cursor-pointer hover:scale-125 transition-transform duration-300 shadow-[0_0_20px_rgba(139, 92, 246, 0.6)] flex items-center justify-center">
              <div className="w-1 h-1 bg-primary rounded-full" />
           </div>
 
           {/* Label (always visible but small) */}
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-md text-[#E8DCC4]/70 uppercase tracking-widest text-[10px] pointer-events-none">
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-md text-primary-container/70 uppercase tracking-widest text-[10px] pointer-events-none">
             {point.name}
           </div>
 
@@ -103,8 +103,8 @@ export function InteractiveMap() {
         className="absolute bottom-8 right-8 text-right pointer-events-none"
         animate={{ opacity: activePoint ? 0 : 1 }}
       >
-        <h3 className="font-serif text-3xl text-[#E8DCC4] mb-2">Die Quellen von Nur</h3>
-        <p className="font-label-md uppercase tracking-widest text-[#E8DCC4]/70 text-xs">Hover über die Punkte auf der Karte</p>
+        <h3 className="font-serif text-3xl text-primary-container mb-2">Die Quellen von Nur</h3>
+        <p className="font-label-md uppercase tracking-widest text-primary-container/70 text-xs">Hover über die Punkte auf der Karte</p>
       </motion.div>
     </div>
   );
