@@ -13,10 +13,10 @@ export default function AuthPage() {
         
         {/* Left Side: Brand Message or Image Placeholder */}
         <div className="md:w-1/2 p-12 bg-primary flex flex-col justify-center text-on-primary">
-          <span className="font-label-md uppercase tracking-widest text-[#FDFCFB]/80 mb-6 block">Nur Exklusiv</span>
+          <span className="font-label-md uppercase tracking-[0.2em] text-[#1A1A1A]/80 mb-6 block text-xs">Exklusiver Zugang</span>
           <h2 className="font-display-md text-4xl mb-4 font-serif">Licht für deine Seele.</h2>
           <p className="font-body-md text-[#FDFCFB]/80 max-w-sm">
-            Trete unserer Community bei und erhalte exklusiven Zugang zu limitierten Pre-Orders, handgefertigten Unikaten und tiefen Einblicken in unsere Manufaktur.
+            Trete unserer Community bei und erhalte exklusiven Zugang zu limitierten Kollektionen, handgefertigten Unikaten und tiefen Einblicken in unsere Boutique.
           </p>
         </div>
 

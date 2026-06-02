@@ -10,92 +10,92 @@ export type SneakPeek = {
 export const MOCK_SNEAK_PEEKS: SneakPeek[] = [
     {
         id: "sp1",
-        title: "Premium Koranhüllen",
-        subtitle: "Handgefertigt aus Samt und veganem Leder",
-        date: "In Produktion. Launch: Winter 2026."
+        title: "Kollektion Herbst/Winter",
+        subtitle: "Minimalistische Silhouetten & edle Stoffe",
+        date: "Drop 01: Exklusiv In-Store"
     },
     {
         id: "sp2",
-        title: "Aesthetic Sticker",
-        subtitle: "Minimalistisches Islamic Design",
-        date: "In Produktion. Launch: Winter 2026."
+        title: "Cashmere Essentials",
+        subtitle: "Kompromissloser Komfort",
+        date: "Drop 02: Limitiert verfügbar"
     },
     {
         id: "sp3",
-        title: "Luxus Gebetsteppiche",
-        subtitle: "Sanfte Farben, höchste Qualität",
-        date: "In Produktion. Launch: Winter 2026."
+        title: "Talia Signature",
+        subtitle: "Zeitlose Eleganz für den Abend",
+        date: "Drop 03: Bald erhältlich"
     }
 ];
 
 export const MOCK_TESTIMONIALS = [
     {
         id: "t1",
-        name: "Amina K.",
-        role: "Early Access Member",
-        content: "Die Ästhetik von Nur ist genau das, wonach ich gesucht habe. Endlich ein Design-Ansatz für den Islamic Lifestyle, der minimalistisch und hochwertig ist."
+        name: "Kateryna O.",
+        role: "Kundin",
+        content: "Gute Qualität und schöne Beratung 🥰 Die Auswahl ist unglaublich hochwertig und stilvoll."
     },
     {
         id: "t2",
-        name: "Yusuf M.",
-        role: "Design Enthusiast",
-        content: "Ich verfolge die Entstehung der Manufaktur-Produkte in Istanbul auf Social Media. Die Qualität und Liebe zum Detail ist spürbar."
+        name: "Abdurrahman A.",
+        role: "Kunde",
+        content: "Sehr nette Inhaber und beste Qualität. Ein echter Geheimtipp in Wetzlar für alle, die Premium-Mode schätzen."
     },
     {
         id: "t3",
-        name: "Leila S.",
-        role: "Community",
-        content: "Die Kombination aus tiefer Spiritualität und modernem, eleganten Design spricht mich sehr an. Ich kann den ersten Drop kaum erwarten."
+        name: "Jeewan S.",
+        role: "Kunde",
+        content: "Gut.. Exzellenter Service und wunderschöne Stücke. Komme immer wieder gerne."
     }
 ];
 
 export const MOCK_FAQS = [
     {
-        question: "Wann findet der erste Launch statt?",
-        answer: "Unser erster exklusiver Drop, bestehend aus handgefertigten Koranhüllen und Aesthetic Stickern, ist für Winter 2026 geplant. Trage dich in die Warteliste ein, um als Erstes benachrichtigt zu werden."
+        question: "Wo befindet sich die Talia Boutique?",
+        answer: "Unsere physische Boutique findest du in der Bahnhofstraße 1, 35576 Wetzlar. Komm vorbei und erlebe unsere Kollektionen hautnah."
     },
     {
-        question: "Wo werden eure Produkte hergestellt?",
-        answer: "Wir legen großen Wert auf traditionelle Handwerkskunst. Unsere Produkte werden größtenteils in ausgewählten Manufakturen in Istanbul unter ethischen Bedingungen gefertigt."
+        question: "Bietet ihr Personal Shopping an?",
+        answer: "Ja, wir legen großen Wert auf eine ehrliche und individuelle Beratung. Vereinbare gerne vorab einen Termin oder besuche uns zu den regulären Öffnungszeiten."
     },
     {
-        question: "Was bedeutet 'Nur'?",
-        answer: "'Nur' ist das arabische Wort für Licht. Es steht für Erleuchtung, spirituelle Klarheit und die innere Schönheit, die wir mit unseren Produkten in deinen Alltag bringen möchten."
+        question: "Woher bezieht ihr eure Kollektionen?",
+        answer: "Wir kuratieren unsere Mode von exklusiven internationalen Brands und ausgewählten Ateliers, die unseren hohen Anspruch an Qualität und Ethik teilen."
     },
     {
-        question: "Gibt es internationalen Versand?",
-        answer: "Zum Launch werden wir primär nach Deutschland, Österreich und in die Schweiz versenden. Ein europaweiter und später internationaler Versand ist fest in Planung."
+        question: "Kann ich auch online einkaufen?",
+        answer: "Unser Fokus liegt aktuell auf der exklusiven In-Store Experience in Wetzlar, da wir glauben, dass Premium-Mode gefühlt und anprobiert werden muss. Ausgewählte Stücke sind im Online-Katalog sichtbar."
     }
 ];
 
 export const MOCK_INSTAGRAM = [
-    { id: "ig1", image: "https://picsum.photos/seed/ig1/600/600", link: "#" },
-    { id: "ig2", image: "https://picsum.photos/seed/ig2/600/600", link: "#" },
-    { id: "ig3", image: "https://picsum.photos/seed/ig3/600/600", link: "#" },
-    { id: "ig4", image: "https://picsum.photos/seed/ig4/600/600", link: "#" },
+    { id: "ig1", image: "https://picsum.photos/seed/talia1/600/600", link: "#" },
+    { id: "ig2", image: "https://picsum.photos/seed/talia2/600/600", link: "#" },
+    { id: "ig3", image: "https://picsum.photos/seed/talia3/600/600", link: "#" },
+    { id: "ig4", image: "https://picsum.photos/seed/talia4/600/600", link: "#" },
 ];
 
 export const MOCK_JOURNAL: JournalArticle[] = [
     {
-        id: "sabr",
-        title: "Die Bedeutung von Sabr im Alltag",
-        excerpt: "Wie Geduld und Standhaftigkeit unser Herz in unruhigen Zeiten beruhigen können.",
+        id: "fall-collection",
+        title: "Die Essenz der Herbstkollektion",
+        excerpt: "Wie gedeckte Farben und Cashmere unsere Garderobe transformieren.",
         content: "Detailed content would go here...",
-        category: "Spiritualität",
-        imageUrl: "https://picsum.photos/seed/sabr/1200/800",
-        imageAlt: "Geduld im Alltag",
-        publishedAt: "2026-05-10",
-        author: "Nur Editorial"
+        category: "Kollektion",
+        imageUrl: "https://picsum.photos/seed/fall/1200/800",
+        imageAlt: "Herbstkollektion Talia",
+        publishedAt: "2026-09-10",
+        author: "Talia Editorial"
     },
     {
-        id: "quran-journaling",
-        title: "Quran Journaling für Anfänger",
-        excerpt: "Ein minimalisitischer Guide um eine tiefere Verbindung zur Offenbarung aufzubauen.",
+        id: "boutique-wetzlar",
+        title: "Ein Blick hinter die Kulissen",
+        excerpt: "Warum Wetzlar der perfekte Ort für exklusive Fashion ist.",
         content: "Detailed content would go here...",
-        category: "Praxis",
-        imageUrl: "https://picsum.photos/seed/quran/1200/800",
-        imageAlt: "Quran Journaling",
-        publishedAt: "2026-05-18",
-        author: "Nur Editorial"
+        category: "Behind the Scenes",
+        imageUrl: "https://picsum.photos/seed/wetzlar/1200/800",
+        imageAlt: "Wetzlar Boutique",
+        publishedAt: "2026-08-18",
+        author: "Talia Editorial"
     }
 ];

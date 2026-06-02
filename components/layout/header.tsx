@@ -64,8 +64,8 @@ export function Header() {
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-300",
           isScrolled
-            ? "bg-[#4A3F41]/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.15)] py-4"
-            : "bg-[#4A3F41]/90 backdrop-blur-md py-6 lg:py-8"
+            ? "bg-[#FDFCFB]/95 backdrop-blur-xl shadow-[0_1px_0_rgba(26,26,26,0.05)] py-4"
+            : "bg-transparent py-6 lg:py-8"
         )}
       >
         <nav className="flex justify-between items-center max-w-[1280px] mx-auto px-5 md:px-[64px]">
@@ -75,18 +75,8 @@ export function Header() {
             href="/"
             className="flex-none flex items-center justify-center gap-3 group"
           >
-            <svg 
-              width="28" 
-              height="28" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-[#FDFCFB] transition-transform duration-500 group-hover:rotate-12"
-            >
-              <path d="M12.4 2.1C18 2.1 22.5 6.6 22.5 12.2C22.5 17.8 18 22.3 12.4 22.3C10.7 22.3 9.1 21.9 7.7 21.1C11.5 20.3 14.4 16.9 14.4 12.8C14.4 8.7 11.5 5.3 7.7 4.5C9.1 3.7 10.7 3.3 12.4 2.1Z" fill="currentColor"/>
-            </svg>
-            <span className="font-headline-md text-2xl md:text-3xl font-medium text-[#FDFCFB] tracking-tight italic">
-              Nur
+            <span className="font-headline-md text-2xl md:text-3xl font-medium text-[#1A1A1A] tracking-tight uppercase tracking-widest">
+              Talia Boutique
             </span>
           </Link>
 
@@ -99,8 +89,8 @@ export function Header() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "font-label-md text-[13px] uppercase tracking-[0.15em] transition-all duration-300",
-                      isActive ? "text-[#FDFCFB] font-medium" : "text-[#FDFCFB]/70 hover:text-[#FDFCFB]"
+                      "font-label-md text-[11px] uppercase tracking-[0.2em] transition-all duration-300",
+                      isActive ? "text-[#1A1A1A] font-medium" : "text-[#1A1A1A]/50 hover:text-[#1A1A1A]"
                     )}
                   >
                     {link.label}
@@ -108,7 +98,7 @@ export function Header() {
                   {isActive && (
                     <motion.div 
                       layoutId="active-indicator"
-                      className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#E8C5C9]"
+                      className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-full h-[1px] bg-[#1A1A1A]"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -119,21 +109,21 @@ export function Header() {
 
           {/* Desktop Actions (Right) */}
           <div className="hidden lg:flex gap-6 items-center justify-end">
-            <button onClick={() => setIsSearchOpen(true)} className="text-[#FDFCFB]/80 hover:text-[#FDFCFB] transition-colors" aria-label="Suche">
-              <span className="material-symbols-outlined text-[26px]">search</span>
+            <button onClick={() => setIsSearchOpen(true)} className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Suche">
+              <span className="material-symbols-outlined text-[24px]">search</span>
             </button>
-            <Link href="/wunschzettel" className="text-[#FDFCFB]/80 hover:text-[#FDFCFB] transition-colors" aria-label="Wunschzettel">
-              <span className="material-symbols-outlined text-[26px]">favorite</span>
+            <Link href="/wunschzettel" className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Wunschzettel">
+              <span className="material-symbols-outlined text-[24px]">favorite</span>
             </Link>
-            <Link href="/konto" className="text-[#FDFCFB]/80 hover:text-[#FDFCFB] transition-colors" aria-label="Account">
-              <span className="material-symbols-outlined text-[26px]">person</span>
+            <Link href="/konto" className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Account">
+              <span className="material-symbols-outlined text-[24px]">person</span>
             </Link>
           </div>
 
           {/* Mobile Hamburger Trigger */}
           <button 
             ref={openButtonRef}
-            className="lg:hidden text-[#FDFCFB] p-2 -mr-2 hover:opacity-80 transition-opacity"
+            className="lg:hidden text-[#1A1A1A] p-2 -mr-2 hover:opacity-80 transition-opacity"
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Menü öffnen"
             aria-expanded={isMobileMenuOpen}
