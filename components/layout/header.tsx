@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
-import { useHoverSound } from "@/hooks/use-hover-sound";
+
 import { SearchModal } from "@/components/ui/search-modal";
 
 export function Header() {
@@ -14,7 +14,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
-  const playHoverSound = useHoverSound();
+
   const closeButtonRef = React.useRef<HTMLButtonElement>(null);
   const openButtonRef = React.useRef<HTMLButtonElement>(null);
 
@@ -95,7 +95,7 @@ export function Header() {
             {mainNavLinks.map((link) => {
               const isActive = (pathname.startsWith(link.href) && link.href !== "/") || pathname === link.href;
               return (
-                <li key={link.href} className="relative group" onMouseEnter={playHoverSound}>
+                <li key={link.href} className="relative group">
                   <Link
                     href={link.href}
                     className={cn(

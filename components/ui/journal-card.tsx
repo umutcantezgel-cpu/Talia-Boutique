@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useHoverSound } from "@/hooks/use-hover-sound";
+
 import { BlurImagePlaceholder } from "@/components/ui/blur-image";
 
 export interface JournalCardProps {
@@ -25,12 +25,11 @@ export function JournalCard({
     excerpt,
     className
 }: JournalCardProps) {
-    const playHoverSound = useHoverSound();
+
 
     return (
         <article 
             className={cn("group cursor-pointer flex flex-col h-full", className)}
-            onMouseEnter={playHoverSound}
         >
             <Link href={href} className="block aspect-[4/3] overflow-hidden rounded-[20px] mb-6 bg-surface-variant relative shadow-pink border border-outline-variant group-hover:border-primary transition-colors">
                 <BlurImagePlaceholder seed={href} icon="article" />

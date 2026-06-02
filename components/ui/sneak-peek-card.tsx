@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as motion from "motion/react-client";
-import { useHoverSound } from "@/hooks/use-hover-sound";
+
 import { useWishlist } from "@/contexts/wishlist-context";
 import { BlurImagePlaceholder } from "@/components/ui/blur-image";
 
@@ -12,7 +12,7 @@ interface SneakPeekCardProps {
 }
 
 export function SneakPeekCard({ peek, idx }: SneakPeekCardProps) {
-  const playHoverSound = useHoverSound();
+
   const { isInWishlist, toggleWishlist } = useWishlist();
   
   const isWished = isInWishlist(peek.id);
@@ -23,7 +23,6 @@ export function SneakPeekCard({ peek, idx }: SneakPeekCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, delay: idx * 0.15, ease: "easeOut" }}
-      onMouseEnter={playHoverSound}
       className="group relative overflow-hidden rounded-[24px] aspect-[3/4] bg-surface-container-highest shadow-pink hover:shadow-pink-hover transition-all duration-300 flex items-center justify-center border border-outline-variant cursor-pointer"
     >
        <button
