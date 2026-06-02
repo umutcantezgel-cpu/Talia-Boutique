@@ -157,7 +157,7 @@ export default function Home() {
          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <ScrollReveal direction="up">
               <div className="text-center mb-16">
-                 <span className="font-label-md text-[#1A1A1A] uppercase tracking-[0.2em] mb-4 block text-xs">Bewertungen</span>
+                 <span className="font-label-md text-[#1A1A1A] uppercase tracking-[0.2em] mb-4 block text-xs">Google Maps (4,3 Sterne)</span>
                  <h2 className="font-headline-lg text-4xl md:text-5xl text-on-surface font-serif italic">Was unsere Kundschaft sagt</h2>
               </div>
               <TestimonialSlider testimonials={MOCK_TESTIMONIALS} />

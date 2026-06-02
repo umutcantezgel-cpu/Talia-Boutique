@@ -30,6 +30,7 @@ export default function JournalGrid() {
             category={article.category}
             title={article.title}
             excerpt={article.excerpt}
+            videoUrl={article.videoUrl}
           />
         </motion.div>
       ))}

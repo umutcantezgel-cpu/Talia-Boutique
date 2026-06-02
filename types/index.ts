@@ -21,6 +21,7 @@ export interface JournalArticle {
     category: string;
     imageUrl: string;
     imageAlt: string;
+    videoUrl?: string;
     publishedAt: string;
     author: string;
 }

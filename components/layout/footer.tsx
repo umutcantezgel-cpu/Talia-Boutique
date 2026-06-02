@@ -150,7 +150,7 @@ export function Footer() {
               >
                 <path d="M12.4 2.1C18 2.1 22.5 6.6 22.5 12.2C22.5 17.8 18 22.3 12.4 22.3C10.7 22.3 9.1 21.9 7.7 21.1C11.5 20.3 14.4 16.9 14.4 12.8C14.4 8.7 11.5 5.3 7.7 4.5C9.1 3.7 10.7 3.3 12.4 2.1Z" fill="currentColor"/>
               </svg>
-              <span className="font-headline-lg text-headline-lg text-[#FDFCFB] italic">Nur</span>
+              <span className="font-headline-lg text-headline-lg text-[#FDFCFB] italic">Talia Boutique</span>
             </Link>
           </div>
           
@@ -163,8 +163,8 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <h4 className="font-label-sm text-[#FDFCFB]/50 uppercase tracking-widest mb-2">Die Marke</h4>
-            <Link href="/about/entity" className="font-body-md text-body-md text-[#FDFCFB]/70 hover:text-[#FDFCFB] transition-colors">Über Nur</Link>
+            <h4 className="font-label-sm text-[#FDFCFB]/50 uppercase tracking-widest mb-2">Die Boutique</h4>
+            <Link href="/about/entity" className="font-body-md text-body-md text-[#FDFCFB]/70 hover:text-[#FDFCFB] transition-colors">Über uns</Link>
             <Link href="/journal" className="font-body-md text-body-md text-[#FDFCFB]/70 hover:text-[#FDFCFB] transition-colors">Journal</Link>
             <Link href="/creator" className="font-body-md text-body-md text-[#FDFCFB]/70 hover:text-[#FDFCFB] transition-colors">Creator Program</Link>
             <Link href="/presse" className="font-body-md text-body-md text-[#FDFCFB]/70 hover:text-[#FDFCFB] transition-colors">Presse</Link>
@@ -188,9 +188,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-[#FDFCFB]/10 flex justify-center">
-          <p className="font-label-sm text-label-sm text-[#FDFCFB]/50 uppercase tracking-widest text-center">
-            © 2026 Nur. Premium Islamic Lifestyle und Handwerkskunst aus Istanbul.
+        <div className="mt-16 pt-8 border-t border-[#FDFCFB]/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-label-sm text-label-sm text-[#FDFCFB]/50 uppercase tracking-widest text-center md:text-left">
+            Talia Boutique • Bahnhofstraße 1, 35576 Wetzlar • Tel: 06441 9637730
+          </p>
+          <p className="font-label-sm text-label-sm text-[#FDFCFB]/50 uppercase tracking-widest text-center md:text-right">
+            © 2026 Talia Boutique. High-End Fashion. Mittwochs ab 10:30 Uhr geöffnet.
           </p>
         </div>
       </div>

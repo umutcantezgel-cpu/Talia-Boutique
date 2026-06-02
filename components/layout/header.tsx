@@ -8,6 +8,7 @@ import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 
 import { SearchModal } from "@/components/ui/search-modal";
+import { useLanguage, Language } from "@/contexts/language-context";
 
 export function Header() {
   const pathname = usePathname();
@@ -17,6 +18,20 @@ export function Header() {
 
   const closeButtonRef = React.useRef<HTMLButtonElement>(null);
   const openButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  const { language, setLanguage } = useLanguage();
+  const [isLangOpen, setIsLangOpen] = React.useState(false);
+  const langRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -109,6 +124,44 @@ export function Header() {
 
           {/* Desktop Actions (Right) */}
           <div className="hidden lg:flex gap-6 items-center justify-end">
+            {/* Language Switcher */}
+            <div className="relative" ref={langRef}>
+              <button 
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors font-label-md text-[11px] uppercase tracking-widest flex items-center gap-1"
+              >
+                {language}
+                <span className="material-symbols-outlined text-[16px] transition-transform duration-200" style={{ transform: isLangOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>expand_more</span>
+              </button>
+              
+              <AnimatePresence>
+                {isLangOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full right-0 mt-4 py-2 w-24 bg-[#FDFCFB] border border-[#1A1A1A]/10 shadow-lg rounded-lg flex flex-col z-50"
+                  >
+                    {(["DE", "EN", "TR", "KU", "FA", "AR"] as Language[]).map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          setLanguage(lang);
+                          setIsLangOpen(false);
+                        }}
+                        className={cn(
+                          "px-4 py-2 text-left font-label-md text-[11px] uppercase tracking-widest transition-colors",
+                          language === lang ? "text-[#1A1A1A] font-medium bg-[#1A1A1A]/5" : "text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-[#1A1A1A]/5"
+                        )}
+                      >
+                        {lang}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <button onClick={() => setIsSearchOpen(true)} className="text-[#1A1A1A]/80 hover:text-[#1A1A1A] transition-colors" aria-label="Suche">
               <span className="material-symbols-outlined text-[24px]">search</span>
             </button>
@@ -198,8 +251,8 @@ export function Header() {
 
                   {/* Secondary Links Array */}
                   <div className="flex flex-col gap-4">
-                    <span className="font-label-sm text-primary uppercase tracking-widest text-xs">Die Marke</span>
-                    <Link href="/about/entity" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Über Nur</Link>
+                    <span className="font-label-sm text-primary uppercase tracking-widest text-xs">Die Boutique</span>
+                    <Link href="/about/entity" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Über uns</Link>
                     <Link href="/creator" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Creator Program</Link>
                     <Link href="/presse" className="font-body-md text-body-md text-text-secondary hover:text-on-surface transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Presse & Medien</Link>
                   </div>
@@ -215,6 +268,16 @@ export function Header() {
 
               {/* Action Icons Footer */}
               <div className="p-6 pb-10 border-t border-surface-variant/50 flex justify-around items-center bg-[#FAF7F2]">
+                <button onClick={() => {
+                    const langs = ["DE", "EN", "TR", "KU", "FA", "AR"] as Language[];
+                    const nextLangIdx = (langs.indexOf(language) + 1) % 6;
+                    setLanguage(langs[nextLangIdx]);
+                  }}
+                  className="flex flex-col items-center gap-2 text-text-secondary hover:text-primary transition-colors" aria-label="Sprache"
+                >
+                  <span className="material-symbols-outlined text-[28px]" aria-hidden="true">language</span>
+                  <span className="text-[10px] font-label-md uppercase tracking-wider">{language}</span>
+                </button>
                 <Link href="/wunschzettel" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center gap-2 text-text-secondary hover:text-primary transition-colors" aria-label="Dein Wunschzettel">
                   <span className="material-symbols-outlined text-[28px]" aria-hidden="true">favorite</span>
                   <span className="text-[10px] font-label-md uppercase tracking-wider">Wunsch</span>

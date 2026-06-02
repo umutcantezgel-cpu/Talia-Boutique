@@ -83,6 +83,7 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         content: "Detailed content would go here...",
         category: "Kollektion",
         imageUrl: "https://picsum.photos/seed/fall/1200/800",
+        videoUrl: "/assets/instagram/1.mp4",
         imageAlt: "Herbstkollektion Talia",
         publishedAt: "2026-09-10",
         author: "Talia Editorial"
@@ -94,8 +95,33 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         content: "Detailed content would go here...",
         category: "Behind the Scenes",
         imageUrl: "https://picsum.photos/seed/wetzlar/1200/800",
+        videoUrl: "/assets/instagram/2.mp4",
         imageAlt: "Wetzlar Boutique",
         publishedAt: "2026-08-18",
+        author: "Talia Editorial"
+    },
+    {
+        id: "signature-talia",
+        title: "Talia Signature Style",
+        excerpt: "Zeitlose Eleganz für jeden Anlass.",
+        content: "Detailed content would go here...",
+        category: "Style Guide",
+        imageUrl: "https://picsum.photos/seed/signature/1200/800",
+        videoUrl: "/assets/instagram/3.mp4",
+        imageAlt: "Signature Style",
+        publishedAt: "2026-07-22",
+        author: "Talia Editorial"
+    },
+    {
+        id: "premium-cashmere",
+        title: "Cashmere: Kompromisslose Qualität",
+        excerpt: "Warum wir bei unseren Stoffen keine Abstriche machen.",
+        content: "Detailed content would go here...",
+        category: "Material",
+        imageUrl: "https://picsum.photos/seed/cashmere/1200/800",
+        videoUrl: "/assets/instagram/4.mp4",
+        imageAlt: "Premium Cashmere",
+        publishedAt: "2026-07-05",
         author: "Talia Editorial"
     }
 ];

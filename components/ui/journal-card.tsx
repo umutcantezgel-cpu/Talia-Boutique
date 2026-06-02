@@ -13,6 +13,7 @@ export interface JournalCardProps {
     category: string;
     title: string;
     excerpt: string;
+    videoUrl?: string;
     className?: string;
 }
 
@@ -23,16 +24,20 @@ export function JournalCard({
     category,
     title,
     excerpt,
+    videoUrl,
     className
 }: JournalCardProps) {
-
 
     return (
         <article 
             className={cn("group cursor-pointer flex flex-col h-full", className)}
         >
             <Link href={href} className="block aspect-[4/3] overflow-hidden rounded-[20px] mb-6 bg-surface-variant relative shadow-pink border border-outline-variant group-hover:border-primary transition-colors">
-                <BlurImagePlaceholder seed={href} icon="article" />
+                {videoUrl ? (
+                    <video src={videoUrl} autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                ) : (
+                    <BlurImagePlaceholder seed={href} icon="article" />
+                )}
             </Link>
             <div className="flex flex-col flex-grow">
                 <span className="font-label-sm text-primary uppercase tracking-widest mb-3 block">{category}</span>

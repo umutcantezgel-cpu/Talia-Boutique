@@ -43,6 +43,7 @@ export default function JournalPage() {
                 excerpt={article.excerpt}
                 imageUrl={article.imageUrl}
                 imageAlt={article.imageAlt}
+                videoUrl={article.videoUrl}
               />
             </motion.div>
           ))}
