@@ -67,10 +67,6 @@ export function Header() {
     { href: "/journal", label: t.journal },
   ];
 
-  const supportLinks = [
-    { href: "/kontakt", label: "FAQ & Kontakt" },
-    { href: "/tracking", label: "Bestellstatus" },
-  ];
 
   return (
     <>
