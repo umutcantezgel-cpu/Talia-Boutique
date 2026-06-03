@@ -104,29 +104,6 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* The "Sneak Peek" Interactive Grid / Collections */}
-      <section className="py-32 md:py-48 bg-bg-primary relative">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="flex flex-col items-center text-center mb-24">
-            <ScrollReveal direction="up">
-              <span className="font-label-md text-primary uppercase tracking-[0.2em] mb-4 block text-xs">Exklusiv</span>
-              <h2 className="font-headline-lg text-5xl md:text-7xl text-on-surface font-serif uppercase tracking-tighter">Season Drops</h2>
-            </ScrollReveal>
-          </div>
-
-          <Suspense fallback={<ClientSkeletonWrapper count={3} className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12" />}>
-            <ScrollReveal direction="up" delay={0.2}>
-              <SneakPeekGrid />
-            </ScrollReveal>
-          </Suspense>
-          
-          <div className="mt-20 text-center">
-            <Link href="/shop" className="inline-block border-b border-primary text-primary pb-1 uppercase tracking-[0.2em] text-xs hover:text-text-secondary hover:border-text-secondary transition-all">
-               Alle Kollektionen ansehen
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Editorial Reviews / Testimonials */}
       <section id="reviews" className="py-32 bg-surface-variant">

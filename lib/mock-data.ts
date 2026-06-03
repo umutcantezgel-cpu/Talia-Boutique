@@ -69,10 +69,18 @@ export const MOCK_FAQS = [
 ];
 
 export const MOCK_INSTAGRAM = [
-    { id: "ig1", image: "", link: "#" },
-    { id: "ig2", image: "", link: "#" },
-    { id: "ig3", image: "", link: "#" },
-    { id: "ig4", image: "", link: "#" },
+    { id: "ig1", video: "/videos/video1.mp4", link: "#" },
+    { id: "ig2", video: "/videos/video2.mp4", link: "#" },
+    { id: "ig3", video: "/videos/video3.mp4", link: "#" },
+    { id: "ig4", video: "/videos/video4.mp4", link: "#" },
+    { id: "ig5", video: "/videos/video5.mp4", link: "#" },
+    { id: "ig6", video: "/videos/video6.mp4", link: "#" },
+    { id: "ig7", video: "/videos/video7.mp4", link: "#" },
+    { id: "ig8", video: "/videos/video8.mp4", link: "#" },
+    { id: "ig9", video: "/videos/video9.mp4", link: "#" },
+    { id: "ig10", video: "/videos/video10.mp4", link: "#" },
+    { id: "ig11", video: "/videos/video11.mp4", link: "#" },
+    { id: "ig12", video: "/videos/video12.mp4", link: "#" },
 ];
 
 export const MOCK_JOURNAL: JournalArticle[] = [
@@ -82,7 +90,7 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Wie gedeckte Farben und Cashmere unsere Garderobe transformieren.",
         content: "Detailed content would go here...",
         category: "Kollektion",
-        imageUrl: "",
+        imageUrl: "/images/journal/fall_collection.png",
         videoUrl: "",
         imageAlt: "Herbstkollektion Talia",
         publishedAt: "2026-09-10",
@@ -94,7 +102,7 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Warum Wetzlar der perfekte Ort für exklusive Fashion ist.",
         content: "Detailed content would go here...",
         category: "Behind the Scenes",
-        imageUrl: "",
+        imageUrl: "/images/journal/boutique_wetzlar.png",
         videoUrl: "",
         imageAlt: "Wetzlar Boutique",
         publishedAt: "2026-08-18",
@@ -106,7 +114,7 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Zeitlose Eleganz für jeden Anlass.",
         content: "Detailed content would go here...",
         category: "Style Guide",
-        imageUrl: "",
+        imageUrl: "/images/journal/signature_talia.png",
         videoUrl: "",
         imageAlt: "Signature Style",
         publishedAt: "2026-07-22",
@@ -118,10 +126,46 @@ export const MOCK_JOURNAL: JournalArticle[] = [
         excerpt: "Warum wir bei unseren Stoffen keine Abstriche machen.",
         content: "Detailed content would go here...",
         category: "Material",
-        imageUrl: "",
+        imageUrl: "/images/journal/premium_cashmere.png",
         videoUrl: "",
         imageAlt: "Premium Cashmere",
         publishedAt: "2026-07-05",
+        author: "Talia Editorial"
+    },
+    {
+        id: "hochzeitsmode-wetzlar",
+        title: "Exklusive Hochzeitsmode in Wetzlar",
+        excerpt: "Entdecke Traumkleider für den schönsten Tag in der Talia Boutique.",
+        content: "Detailed content would go here...",
+        category: "Bridal",
+        imageUrl: "/images/journal/wedding_dress.png",
+        videoUrl: "",
+        imageAlt: "Hochzeitsmode Wetzlar",
+        publishedAt: "2026-06-03",
+        author: "Talia Editorial"
+    },
+    {
+        id: "abendkleider-eleganz",
+        title: "Abendkleider für unvergessliche Nächte",
+        excerpt: "Finde das perfekte Abendkleid für deinen besonderen Anlass.",
+        content: "Detailed content would go here...",
+        category: "Evening",
+        imageUrl: "/images/journal/evening_gown.png",
+        videoUrl: "",
+        imageAlt: "Abendkleider Wetzlar",
+        publishedAt: "2026-06-02",
+        author: "Talia Editorial"
+    },
+    {
+        id: "bridal-details-perfektion",
+        title: "Bridal Details: Perfektion bis ins Detail",
+        excerpt: "Accessoires und Feinheiten, die deinen Bridal-Look vervollständigen.",
+        content: "Detailed content would go here...",
+        category: "Accessories",
+        imageUrl: "/images/journal/bridal_details.png",
+        videoUrl: "",
+        imageAlt: "Bridal Details",
+        publishedAt: "2026-06-01",
         author: "Talia Editorial"
     }
 ];

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 
@@ -290,7 +291,7 @@ const newTranslations = {
 };
 
 for (const lang of Object.keys(newTranslations)) {
-  const langObjMatch = content.match(new RegExp(\`\${lang}: \\\{[\\\\s\\\\S]*?(?=\\\n  \\\},\\\n|\\\n  \\\}$)\`));
+  const langObjMatch = content.match(new RegExp(lang + ': \\\\{[\\\\s\\\\S]*?(?=\\n  \\\\},\\n|\\n  \\\\}$)'));
   if (langObjMatch) {
     content = content.replace(langObjMatch[0], langObjMatch[0] + ',\n' + newTranslations[lang as keyof typeof newTranslations]);
   }

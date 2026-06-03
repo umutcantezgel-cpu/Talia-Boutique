@@ -61,7 +61,11 @@ export default function JournalDetailPage({ params }: { params: Promise<{ slug: 
       </div>
       
       <div className="w-full aspect-[21/9] rounded-[24px] overflow-hidden mb-16 shadow-pink bg-surface-variant flex items-center justify-center border border-outline-variant relative">
-        <BlurImagePlaceholder seed={article.id} icon="photo_library" />
+        {article.imageUrl ? (
+            <img src={article.imageUrl} alt={article.imageAlt || article.title} className="object-cover w-full h-full" />
+        ) : (
+            <BlurImagePlaceholder seed={article.id} icon="photo_library" />
+        )}
         <div className="absolute inset-0 bg-[#8B5CF6] mix-blend-multiply opacity-10 z-10"></div>
       </div>
 

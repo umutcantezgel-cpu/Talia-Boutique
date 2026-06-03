@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 
@@ -208,11 +209,11 @@ const newTranslations = {
         card: { name: "بطاقة الائتمان (Visa و Mastercard و AMEX)", desc: "معالجة آمنة عبر مزود الدفع Stripe الخاص بنا." }
       }
     }
-  \`
+  `
 };
 
 for (const lang of Object.keys(newTranslations)) {
-  const langObjMatch = content.match(new RegExp(\`\${lang}: \\\{[\\\\s\\\\S]*?(?=\\\n  \\\},\\\n|\\\n  \\\}$)\`));
+  const langObjMatch = content.match(new RegExp(lang + ': \\{[\\s\\S]*?(?=\\n  \\},\\n|\\n  \\}$)'));
   if (langObjMatch) {
     content = content.replace(langObjMatch[0], langObjMatch[0] + ',\n' + newTranslations[lang as keyof typeof newTranslations]);
   }

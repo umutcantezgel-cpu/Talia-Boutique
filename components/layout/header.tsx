@@ -62,7 +62,7 @@ export function Header() {
     prevIsOpenRef.current = isMobileMenuOpen;
   }, [isMobileMenuOpen]);
 
-  const mainNavLinks = [
+  const mainNavLinks: { href: string; label: string; isDropdown?: boolean; subLinks?: {href: string; label: string}[] }[] = [
     { href: "/lookbook", label: t.lookbook },
     { href: "/journal", label: t.journal },
   ];

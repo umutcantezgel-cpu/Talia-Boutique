@@ -7,7 +7,8 @@ import { BlurImagePlaceholder } from "@/components/ui/blur-image";
 
 interface InstagramPost {
     id: string;
-    image: string;
+    video?: string;
+    image?: string;
     link: string;
 }
 
@@ -23,7 +24,7 @@ export function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
     }, []);
 
     return (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {posts.map((post, idx) => (
                 <motion.a
                     key={post.id}
@@ -34,7 +35,7 @@ export function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="relative aspect-square overflow-hidden rounded-[24px] group block shadow-pink"
+                    className="relative aspect-[9/16] overflow-hidden rounded-[24px] group block shadow-pink"
                 >
                     {isLoading ? (
                         <div className="w-full h-full bg-surface-variant animate-pulse flex items-center justify-center">
@@ -42,7 +43,16 @@ export function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
                         </div>
                     ) : (
                         <>
-                            {post.image ? (
+                            {post.video ? (
+                                <video 
+                                    src={post.video} 
+                                    autoPlay 
+                                    loop 
+                                    muted 
+                                    playsInline 
+                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                                />
+                            ) : post.image ? (
                                 <Image 
                                     src={post.image} 
                                     alt="Instagram Post" 

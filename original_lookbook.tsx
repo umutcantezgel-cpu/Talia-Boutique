@@ -1,25 +1,28 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+"use client";
+
+import React, { useRef } from 'react';
 import * as motion from 'motion/react-client';
 import Link from 'next/link';
+import { BlurImagePlaceholder } from '@/components/ui/blur-image';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { useLanguage } from '@/contexts/language-context';
 import { getTranslations } from '@/lib/i18n/translations';
 
 const DRAG_ITEMS = [
-  { id: 1, title: "Ramadan Nights", top: "10%", left: "20%", width: "270px", height: "480px", zIndex: 10, product: "Midnight Satin", src: "/videos/video1.mp4" },
-  { id: 2, title: "Ihsan", top: "30%", left: "50%", width: "315px", height: "560px", zIndex: 12, product: "Creme Tasbih", src: "/videos/video2.mp4" },
-  { id: 3, title: "The Atelier", top: "60%", left: "15%", width: "270px", height: "480px", zIndex: 8, product: "Premium Kartonage", src: "/videos/video3.mp4" },
-  { id: 4, title: "Sabr", top: "15%", left: "75%", width: "225px", height: "400px", zIndex: 15, product: "Samt Hülle", src: "/videos/video4.mp4" },
-  { id: 5, title: "Heritage", top: "50%", left: "80%", width: "315px", height: "560px", zIndex: 5, product: "Gebetsteppich", src: "/videos/video5.mp4" },
-  { id: 6, title: "Light", top: "80%", left: "55%", width: "270px", height: "480px", zIndex: 20, product: "Signature Box", src: "/videos/video6.mp4" },
+  { id: 1, title: "Ramadan Nights", top: "10%", left: "20%", width: "400px", height: "500px", zIndex: 10, product: "Midnight Satin" },
+  { id: 2, title: "Ihsan", top: "30%", left: "50%", width: "500px", height: "350px", zIndex: 12, product: "Creme Tasbih" },
+  { id: 3, title: "The Atelier", top: "60%", left: "15%", width: "450px", height: "600px", zIndex: 8, product: "Premium Kartonage" },
+  { id: 4, title: "Sabr", top: "15%", left: "75%", width: "350px", height: "450px", zIndex: 15, product: "Samt Hülle" },
+  { id: 5, title: "Heritage", top: "50%", left: "80%", width: "600px", height: "400px", zIndex: 5, product: "Gebetsteppich" },
+  { id: 6, title: "Light", top: "80%", left: "55%", width: "400px", height: "400px", zIndex: 20, product: "Signature Box" },
 ];
 
 export default function LookbookPage() {
   const { language } = useLanguage();
   const t = getTranslations(language).lookbook;
   const containerRef = useRef<HTMLDivElement>(null);
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
     <main className="flex-grow bg-bg-primary overflow-hidden flex flex-col h-screen">
@@ -40,25 +43,6 @@ export default function LookbookPage() {
            <span className="font-label-md uppercase tracking-widest text-primary text-xs">{t.dragToExplore}</span>
         </div>
       </div>
-
-      {/* Fullscreen Video Modal */}
-      {selectedVideo && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center p-4 md:p-8 backdrop-blur-xl transition-all">
-           <button 
-             onClick={() => setSelectedVideo(null)} 
-             className="absolute top-8 right-8 md:top-12 md:right-12 text-white/80 hover:text-white transition-colors flex items-center gap-2 font-label-md uppercase tracking-widest text-xs z-50 bg-black/40 px-4 py-2 rounded-full border border-white/10 hover:bg-black/60"
-           >
-              Schließen <span className="material-symbols-outlined text-[18px]">close</span>
-           </button>
-           <video 
-             src={selectedVideo} 
-             autoPlay 
-             controls 
-             playsInline 
-             className="max-w-full max-h-[85vh] rounded-[24px] shadow-2xl border border-white/10"
-           />
-        </div>
-      )}
 
       {/* Drag Canvas */}
       <div className="relative flex-grow w-full h-full overflow-hidden cursor-grab active:cursor-grabbing bg-surface-variant">
@@ -88,23 +72,13 @@ export default function LookbookPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
             >
-              <div 
-                className="w-full h-full rounded-[32px] overflow-hidden shadow-2xl relative bg-black cursor-pointer"
-                onClick={() => setSelectedVideo(item.src)}
-              >
-                <video 
-                    src={item.src} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity" 
-                />
+              <div className="w-full h-full rounded-[32px] overflow-hidden shadow-2xl relative">
+                <BlurImagePlaceholder seed={`lookbook-${item.id}`} icon="image" />
                 
                 {/* Hotspot */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <motion.div 
-                    className="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform group/hotspot pointer-events-none"
+                    className="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform group/hotspot"
                     whileHover={{ scale: 1.1 }}
                   >
                     <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
@@ -113,6 +87,7 @@ export default function LookbookPage() {
                     <div className="absolute opacity-0 group-hover/hotspot:opacity-100 pointer-events-none transition-opacity top-full mt-4 left-1/2 -translate-x-1/2 bg-surface text-on-surface whitespace-nowrap px-6 py-3 rounded-xl shadow-2xl border border-outline-variant flex flex-col items-center gap-2">
                       <span className="font-serif text-lg">{item.title}</span>
                       <span className="font-label-md uppercase tracking-widest text-primary text-[10px]">{item.product}</span>
+                      <Link href="/kollektionen" className="mt-2 text-[10px] underline uppercase tracking-widest text-text-secondary hover:text-primary pointer-events-auto">Shop Now</Link>
                     </div>
                   </motion.div>
                 </div>

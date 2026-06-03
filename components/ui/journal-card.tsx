@@ -39,6 +39,8 @@ export function JournalCard({
             <Link href={href} className="block aspect-[4/3] overflow-hidden rounded-[20px] mb-6 bg-surface-variant relative shadow-pink border border-outline-variant group-hover:border-primary transition-colors">
                 {videoUrl ? (
                     <video src={videoUrl} autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                ) : imageUrl ? (
+                    <img src={imageUrl} alt={imageAlt || title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 ) : (
                     <BlurImagePlaceholder seed={href} icon="article" />
                 )}
