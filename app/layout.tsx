@@ -10,6 +10,7 @@ import { CursorGlow } from '@/components/ui/cursor-glow';
 import { WishlistProvider } from '@/contexts/wishlist-context';
 import { constructMetadata } from '@/lib/metadata';
 import { LanguageProvider } from '@/contexts/language-context';
+import { CookieBanner } from '@/components/ui/cookie-banner';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               {children}
               <Footer />
               <ToastContainer />
+              <CookieBanner />
             </WishlistProvider>
           </ToastProvider>
         </LanguageProvider>
