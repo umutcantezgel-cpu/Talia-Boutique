@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const article = MOCK_JOURNAL.find(p => p.id === slug) || MOCK_JOURNAL[0];
 
-  const ogImageUrl = `https://ay-nur.de/api/og?title=${encodeURIComponent(article.title)}`;
+  const ogImageUrl = `https://talia-boutique.de/api/og?title=${encodeURIComponent(article.title)}`;
 
   return constructMetadata({
     title: `${article.title} | Nur Journal`,

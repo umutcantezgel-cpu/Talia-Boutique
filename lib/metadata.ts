@@ -11,7 +11,7 @@ interface MetadataProps {
 export function constructMetadata({
   title,
   description,
-  image = "https://ay-nur.de/og-image.webp",
+  image = "https://talia-boutique.de/og-image.webp",
   noIndex = false,
   keywords = ["Talia Boutique", "Abendkleider Wetzlar", "Hochzeitsmode Wetzlar", "Exklusive Mode", "Fashion Wetzlar"],
 }: MetadataProps): Metadata {
@@ -22,7 +22,7 @@ export function constructMetadata({
     openGraph: {
       title,
       description,
-      url: "https://ay-nur.de",
+      url: "https://talia-boutique.de",
       siteName: "Talia Boutique",
       images: [
         {

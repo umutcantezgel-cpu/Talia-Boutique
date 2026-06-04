@@ -3,7 +3,7 @@ import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({
   title: "Impressum",
-  description: "Impressum der Nur Manufaktur.",
+  description: "Impressum der Talia Boutique.",
 });
 
 export default function ImpressumPage() {
@@ -11,17 +11,16 @@ export default function ImpressumPage() {
     <LegalLayout title="Impressum">
       <p className="font-body-md text-[#222222]/70 mb-8">
         Angaben gemäß § 5 TMG:<br />
-        Rabia Azize Tezgel<br />
         Talia Boutique<br />
-        Lessingstraße 4<br />
-        35578 Wetzlar<br />
+        Bahnhofstraße 1<br />
+        35576 Wetzlar<br />
         Deutschland
       </p>
       
       <h2>Kontakt</h2>
       <p className="font-body-md text-[#222222]/70 mb-8">
-        Telefon: +49 172 1751792<br />
-        E-Mail: salam@ay-nur.de
+        Telefon: 06441 9637730<br />
+        E-Mail: info@talia-boutique.de
       </p>
 
       <h2>Umsatzsteuer-ID</h2>

@@ -3,7 +3,7 @@ import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({
   title: "Allgemeine Geschäftsbedingungen",
-  description: "Allgemeine Geschäftsbedingungen der Nur Manufaktur.",
+  description: "Allgemeine Geschäftsbedingungen der Talia Boutique.",
 });
 
 export default function AGBPage() {
@@ -11,12 +11,12 @@ export default function AGBPage() {
     <LegalLayout title="Allgemeine Geschäftsbedingungen">
       <h2>1. Geltungsbereich</h2>
       <p>
-        Für alle aktuellen und künftigen Geschäftsbeziehungen zwischen der Nur Manufaktur (im Folgenden "wir" oder "Verkäufer") und dem Verbraucher (im Folgenden "Kunde") gelten ausschließlich die nachfolgenden Allgemeinen Geschäftsbedingungen in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.
+        Für alle aktuellen und künftigen Geschäftsbeziehungen zwischen der Talia Boutique (im Folgenden "wir" oder "Verkäufer") und dem Verbraucher (im Folgenden "Kunde") gelten ausschließlich die nachfolgenden Allgemeinen Geschäftsbedingungen in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.
       </p>
 
       <h2>2. Vertragspartner und Vertragsschluss</h2>
       <p>
-        Der Kaufvertrag kommt zustande mit der Nur Manufaktur. Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar. Durch Anklicken des Bestellbuttons geben Sie eine verbindliche Bestellung der im Warenkorb enthaltenen Waren ab.
+        Der Kaufvertrag kommt zustande mit der Talia Boutique. Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar. Durch Anklicken des Bestellbuttons geben Sie eine verbindliche Bestellung der im Warenkorb enthaltenen Waren ab.
       </p>
 
       <h2>3. Preise und Vorbestellungen (Pre-Order)</h2>

@@ -35,15 +35,15 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Talia Boutique",
-      "url": "https://ay-nur.de",
-      "logo": "https://ay-nur.de/logo.svg",
+      "url": "https://talia-boutique.de",
+      "logo": "https://talia-boutique.de/logo.svg",
       "description": "Licht für deine Seele. Premium Islamic Lifestyle und Hochzeitsmode aus Wetzlar."
     },
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Talia Boutique Wetzlar",
-      "image": "https://ay-nur.de/og-image.webp",
+      "image": "https://talia-boutique.de/og-image.webp",
       "description": "Exklusive Abendkleider und Hochzeitsmode im Herzen von Wetzlar. Entdecke Premium-Qualität.",
       "address": {
         "@type": "PostalAddress",

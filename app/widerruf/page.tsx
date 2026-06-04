@@ -3,7 +3,7 @@ import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({
   title: "Widerrufsrecht",
-  description: "Informationen zum Widerrufsrecht und Rückversand bei Nur.",
+  description: "Informationen zum Widerrufsrecht und Rückversand bei der Talia Boutique.",
 });
 
 export default function WiderrufsrechtPage() {
@@ -32,7 +32,7 @@ export default function WiderrufsrechtPage() {
       </p>
       
       <p>
-        Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Nur Manufaktur, Lessingstraße 4, 35578 Wetzlar, E-Mail: salam@ay-nur.de) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.
+        Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Talia Boutique, Bahnhofstraße 1, 35576 Wetzlar, E-Mail: info@talia-boutique.de) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.
       </p>
 
       <h3>Folgen des Widerrufs</h3>

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { JOURNAL_DATA } from '@/lib/i18n/journal-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ay-nur.de' // hypothetical base URL
+  const baseUrl = 'https://talia-boutique.de' // hypothetical base URL
 
   const journals = JOURNAL_DATA.DE.map((journal) => ({
     url: `${baseUrl}/journal/${journal.id}`,

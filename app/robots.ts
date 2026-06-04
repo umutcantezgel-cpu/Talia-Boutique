@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ay-nur.de/sitemap.xml',
+    sitemap: 'https://talia-boutique.de/sitemap.xml',
   }
 }

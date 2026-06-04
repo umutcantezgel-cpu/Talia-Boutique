@@ -3,7 +3,7 @@ import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({
   title: "Datenschutzerklärung",
-  description: "Datenschutzerklärung der Nur Manufaktur.",
+  description: "Datenschutzerklärung der Talia Boutique.",
 });
 
 export default function DatenschutzPage() {
