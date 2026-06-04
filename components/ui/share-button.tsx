@@ -19,7 +19,7 @@ export function ShareButton({ title, text, url }: { title?: string, text?: strin
   };
 
   return (
-    <button onClick={handleShare} className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-label-md tracking-widest uppercase mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-0">
+    <button onClick={handleShare} className="flex items-center gap-2 text-[#222222]/70 hover:text-[#D9A5B3] transition-colors font-label-md tracking-widest uppercase mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-0">
       <span className="material-symbols-outlined text-[18px]">share</span>
       Teilen
     </button>

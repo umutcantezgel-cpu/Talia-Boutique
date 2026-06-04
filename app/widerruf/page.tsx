@@ -9,13 +9,13 @@ export const metadata = constructMetadata({
 export default function WiderrufsrechtPage() {
   return (
     <LegalLayout title="Widerrufsrecht">
-      <div className="bg-surface-variant p-8 rounded-[24px] border border-outline-variant mb-12 flex flex-col items-center text-center">
-        <span className="material-symbols-outlined text-4xl text-primary mb-4 p-4 bg-surface rounded-full">undo</span>
-        <h3 className="font-headline-md text-2xl font-serif mb-2">Rücksendung anmelden</h3>
-        <p className="text-text-secondary font-body-md mb-6 max-w-md">
+      <div className="bg-[#FDFBF7] p-8 rounded-[24px] border border-[#222222]/10 mb-12 flex flex-col items-center text-center">
+        <span className="material-symbols-outlined text-4xl text-[#D9A5B3] mb-4 p-4 bg-white rounded-full">undo</span>
+        <h3 className="font-headline-md text-2xl font-serif mb-2 text-[#3B1C32]">Rücksendung anmelden</h3>
+        <p className="text-[#222222]/70 font-body-md mb-6 max-w-md">
           Du möchtest einen Artikel zurückschicken? Melde deine Retoure ganz einfach hier an.
         </p>
-        <button className="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md uppercase tracking-widest hover:bg-on-surface transition-colors">
+        <button className="bg-[#D9A5B3] text-[#3B1C32] px-8 py-4 rounded-full font-label-md uppercase tracking-widest hover:bg-[#E5B5B5] transition-colors">
           Zum Retourenportal
         </button>
       </div>

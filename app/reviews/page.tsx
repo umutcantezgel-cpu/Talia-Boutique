@@ -21,8 +21,8 @@ export default function ReviewsPage() {
   return (
     <main className="pt-[140px] pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex-grow min-h-[70vh]">
       <div className="text-center mb-16">
-        <h1 className="font-display-lg text-4xl lg:text-6xl text-on-surface mb-6 font-serif">{t.title}</h1>
-        <p className="font-body-md text-text-secondary max-w-2xl mx-auto">
+        <h1 className="font-display-lg text-4xl lg:text-6xl text-[#3B1C32] mb-6 font-serif">{t.title}</h1>
+        <p className="font-body-md text-[#222222]/70 max-w-2xl mx-auto">
           {t.desc}
         </p>
       </div>
@@ -35,40 +35,40 @@ export default function ReviewsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: (idx % 3) * 0.15 }}
-            className="break-inside-avoid bg-surface-variant p-8 rounded-[24px] border border-outline-variant shadow-pink relative overflow-hidden group"
+            className="break-inside-avoid bg-[#FDFBF7] p-8 rounded-[24px] border border-[#222222]/10 shadow-md shadow-[#D9A5B3]/20 relative overflow-hidden group"
           >
             {review.type === 'text' ? (
               <>
-                <div className="flex text-primary mb-4">
+                <div className="flex text-[#D9A5B3] mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <span key={i} className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                   ))}
                 </div>
-                <p className="font-body-md text-on-surface mb-6 italic leading-relaxed">
+                <p className="font-body-md text-[#3B1C32] mb-6 italic leading-relaxed">
                   "{review.text}"
                 </p>
                 <div className="flex justify-between items-center mt-auto">
-                  <span className="font-label-md text-text-secondary uppercase tracking-widest">{review.name}</span>
-                  <span className="font-body-sm text-text-secondary/60">{review.date}</span>
+                  <span className="font-label-md text-[#222222]/70 uppercase tracking-widest">{review.name}</span>
+                  <span className="font-body-sm text-[#222222]/60">{review.date}</span>
                 </div>
               </>
             ) : (
               <>
-                <div className="aspect-[4/5] bg-surface/50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group">
+                <div className="aspect-[4/5] bg-[#FDFBF7]/50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group">
                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                   <span className="material-symbols-outlined text-4xl text-on-surface opacity-30 z-20 group-hover:scale-110 transition-transform duration-500">
+                   <span className="material-symbols-outlined text-4xl text-[#3B1C32] opacity-30 z-20 group-hover:scale-110 transition-transform duration-500">
                      play_circle
                    </span>
                    <div className="absolute inset-x-0 bottom-4 z-20 text-center">
-                     <span className="font-label-md text-surface-container-lowest uppercase tracking-widest text-[10px]">Play Video</span>
+                     <span className="font-label-md text-white uppercase tracking-widest text-[10px]">Play Video</span>
                    </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-label-md text-on-surface uppercase tracking-widest flex items-center gap-2">
+                  <span className="font-label-md text-[#3B1C32] uppercase tracking-widest flex items-center gap-2">
                     <span className="material-symbols-outlined text-[16px]">{review.name.includes("Instagram") ? "photo_camera" : "videocam"}</span>
                     {review.name}
                   </span>
-                  <span className="font-body-sm text-text-secondary/60">{review.date}</span>
+                  <span className="font-body-sm text-[#222222]/60">{review.date}</span>
                 </div>
               </>
             )}

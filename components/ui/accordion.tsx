@@ -13,16 +13,16 @@ interface AccordionItemProps {
 
 export function AccordionItem({ question, answer, isOpen, onClick }: AccordionItemProps) {
   return (
-    <div className="border-b border-surface-variant">
+    <div className="border-b border-[#222222]/10">
       <button
         className="w-full flex justify-between items-center py-6 text-left focus:outline-none group"
         onClick={onClick}
       >
-        <span className="font-headline-md text-xl text-on-surface group-hover:text-primary transition-colors font-serif">
+        <span className="font-headline-md text-xl text-[#3B1C32] group-hover:text-[#D9A5B3] transition-colors font-serif">
           {question}
         </span>
         <span className={cn(
-          "material-symbols-outlined text-primary transition-transform duration-300 flex-shrink-0 ml-4",
+          "material-symbols-outlined text-[#D9A5B3] transition-transform duration-300 flex-shrink-0 ml-4",
           isOpen ? "rotate-45" : ""
         )}>
           add
@@ -34,7 +34,7 @@ export function AccordionItem({ question, answer, isOpen, onClick }: AccordionIt
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <p className="font-body-lg text-text-secondary pb-6 leading-relaxed">
+        <p className="font-body-lg text-[#222222]/70 pb-6 leading-relaxed">
           {answer}
         </p>
       </motion.div>

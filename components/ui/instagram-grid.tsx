@@ -35,11 +35,11 @@ export function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="relative aspect-[9/16] overflow-hidden rounded-[24px] group block shadow-pink"
+                    className="relative aspect-[9/16] overflow-hidden rounded-[24px] group block shadow-md shadow-[#D9A5B3]/20"
                 >
                     {isLoading ? (
-                        <div className="w-full h-full bg-surface-variant animate-pulse flex items-center justify-center">
-                           <span className="material-symbols-outlined text-outline-variant text-[48px]">photo_camera</span>
+                        <div className="w-full h-full bg-[#FDFBF7]/10 animate-pulse flex items-center justify-center">
+                           <span className="material-symbols-outlined text-[#FDFBF7]/30 text-[48px]">photo_camera</span>
                         </div>
                     ) : (
                         <>
@@ -64,8 +64,8 @@ export function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
                             ) : (
                                 <BlurImagePlaceholder seed={`ig-${post.id}`} icon="photo_camera" />
                             )}
-                            <div className="absolute inset-0 bg-bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <span className="material-symbols-outlined text-primary text-[32px]">favorite</span>
+                            <div className="absolute inset-0 bg-[#FDFBF7]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-[#3B1C32] text-[32px]">favorite</span>
                             </div>
                         </>
                     )}

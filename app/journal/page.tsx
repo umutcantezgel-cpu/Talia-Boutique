@@ -27,7 +27,7 @@ export default function JournalPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="font-body-md text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto"
+          className="font-body-md text-xl md:text-2xl text-[#222222]/70 max-w-2xl mx-auto"
         >
           {t.subtitle}
         </motion.p>

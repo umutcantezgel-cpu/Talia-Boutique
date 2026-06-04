@@ -25,19 +25,36 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Nur | Licht für deine Seele',
-  description: 'Trag dich in die VIP-Warteliste ein und erhalte exklusiven Zugang zu unserem ersten Drop.',
+  title: 'Talia Boutique | Exklusive Mode in Wetzlar',
+  description: 'Trag dich in die VIP-Warteliste ein und erhalte exklusiven Zugang zu unserem ersten Drop von Talia Boutique in Wetzlar.',
 });
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nur",
-    "url": "https://ay-nur.de",
-    "logo": "https://ay-nur.de/logo.svg",
-    "description": "Licht für deine Seele. Premium Islamic Lifestyle und Handwerkskunst aus Istanbul."
-  };
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Talia Boutique",
+      "url": "https://ay-nur.de",
+      "logo": "https://ay-nur.de/logo.svg",
+      "description": "Licht für deine Seele. Premium Islamic Lifestyle und Hochzeitsmode aus Wetzlar."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Talia Boutique Wetzlar",
+      "image": "https://ay-nur.de/og-image.webp",
+      "description": "Exklusive Abendkleider und Hochzeitsmode im Herzen von Wetzlar. Entdecke Premium-Qualität.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Musterstraße 1",
+        "addressLocality": "Wetzlar",
+        "postalCode": "35578",
+        "addressCountry": "DE"
+      },
+      "telephone": "+49 6441 1234567"
+    }
+  ];
 
   return (
     <html lang="de" className={`${montserrat.variable} ${playfair.variable} scroll-smooth`}>
@@ -45,7 +62,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="antialiased font-sans text-on-surface bg-bg-primary overflow-x-hidden min-h-screen flex flex-col" suppressHydrationWarning>
+      <body className="antialiased font-sans text-[#222222] bg-[#FDFBF7] overflow-x-hidden min-h-screen flex flex-col" suppressHydrationWarning>
         <CursorGlow />
         <GlobalLoader />
         <LanguageProvider>

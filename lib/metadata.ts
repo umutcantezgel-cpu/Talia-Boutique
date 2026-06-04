@@ -13,7 +13,7 @@ export function constructMetadata({
   description,
   image = "https://ay-nur.de/og-image.webp",
   noIndex = false,
-  keywords = ["Islamic lifestyle", "handcrafted decor", "Islamic interior design", "Quran gift ideas"],
+  keywords = ["Talia Boutique", "Abendkleider Wetzlar", "Hochzeitsmode Wetzlar", "Exklusive Mode", "Fashion Wetzlar"],
 }: MetadataProps): Metadata {
   return {
     title,
@@ -23,7 +23,7 @@ export function constructMetadata({
       title,
       description,
       url: "https://ay-nur.de",
-      siteName: "Nur",
+      siteName: "Talia Boutique",
       images: [
         {
           url: image,
@@ -39,7 +39,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@aynur",
+      creator: "@taliaboutique",
     },
     icons: {
       icon: "/favicon.ico",

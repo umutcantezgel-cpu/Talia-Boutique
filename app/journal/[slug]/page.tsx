@@ -45,12 +45,12 @@ export default function JournalDetailPage({ params }: { params: Promise<{ slug: 
           <ShareButton title={article.title} text={article.excerpt} />
         </div>
         <div className="text-center">
-          <span className="font-label-md text-primary uppercase tracking-widest mb-6 block">{article.category}</span>
-          <h1 className="font-display-lg text-4xl md:text-5xl lg:text-6xl text-on-surface mb-8 font-serif leading-tight">{article.title}</h1>
-          <p className="font-body-lg text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
+          <span className="font-label-md text-[#D9A5B3] uppercase tracking-widest mb-6 block">{article.category}</span>
+          <h1 className="font-display-lg text-4xl md:text-5xl lg:text-6xl text-[#3B1C32] mb-8 font-serif leading-tight">{article.title}</h1>
+          <p className="font-body-lg text-[#222222]/70 mb-10 max-w-2xl mx-auto leading-relaxed">
             {article.excerpt}
           </p>
-          <div className="flex items-center justify-center gap-4 text-text-secondary font-label-md tracking-widest uppercase">
+          <div className="flex items-center justify-center gap-4 text-[#222222]/70 font-label-md tracking-widest uppercase">
             <span>{article.author}</span>
             <span>•</span>
             <time dateTime={article.publishedAt}>
@@ -60,20 +60,20 @@ export default function JournalDetailPage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
       
-      <div className="w-full aspect-[21/9] rounded-[24px] overflow-hidden mb-16 shadow-pink bg-surface-variant flex items-center justify-center border border-outline-variant relative">
+      <div className="w-full aspect-[21/9] rounded-[24px] overflow-hidden mb-16 shadow-md shadow-[#D9A5B3]/20 bg-[#FDFBF7] flex items-center justify-center border border-[#222222]/10 relative">
         {article.imageUrl ? (
             <img src={article.imageUrl} alt={article.imageAlt || article.title} className="object-cover w-full h-full" />
         ) : (
             <BlurImagePlaceholder seed={article.id} icon="photo_library" />
         )}
-        <div className="absolute inset-0 bg-[#8B5CF6] mix-blend-multiply opacity-10 z-10"></div>
+        <div className="absolute inset-0 bg-[#D9A5B3] mix-blend-multiply opacity-10 z-10"></div>
       </div>
 
-      <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:font-medium prose-p:font-sans prose-p:text-text-secondary prose-p:leading-relaxed prose-a:text-primary">
+      <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:font-medium prose-headings:text-[#3B1C32] prose-p:font-sans prose-p:text-[#222222]/70 prose-p:leading-relaxed prose-a:text-[#D9A5B3]">
          <ReactMarkdown>{article.content}</ReactMarkdown>
          
-         <div className="mt-16 pt-8 border-t border-surface-variant text-center">
-            <Link href="/journal" className="inline-flex items-center gap-2 text-primary hover:text-on-surface transition-colors font-label-md tracking-widest uppercase">
+         <div className="mt-16 pt-8 border-t border-[#222222]/10 text-center">
+            <Link href="/journal" className="inline-flex items-center gap-2 text-[#D9A5B3] hover:text-[#3B1C32] transition-colors font-label-md tracking-widest uppercase">
               <span className="material-symbols-outlined text-[18px]">arrow_back</span>
               Zurück zur Übersicht
             </Link>

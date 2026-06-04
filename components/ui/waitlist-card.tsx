@@ -38,14 +38,14 @@ export function WaitlistCard({ className, ...props }: WaitlistCardProps) {
     >
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2 relative">
         <div className={cn(
-          "relative flex flex-col sm:flex-row overflow-hidden rounded-full bg-surface-container-lowest border p-1 transition-colors duration-300",
-          errors.email ? "border-error shadow-[0_0_0_1px_rgba(186,26,26,0.1)]" : "border-surface-variant shadow-pink"
+          "relative flex flex-col sm:flex-row overflow-hidden rounded-full bg-[#FDFBF7] border p-1 transition-colors duration-300",
+          errors.email ? "border-error shadow-[0_0_0_1px_rgba(186,26,26,0.1)]" : "border-[#222222]/10 shadow-md shadow-[#D9A5B3]/20"
         )}>
           <input
             type="email"
             placeholder="Deine E-Mail Adresse"
             disabled={isSubmitting || isSubmitSuccessful}
-            className="flex-1 bg-transparent px-6 py-4 font-body-md text-on-surface focus:outline-none placeholder:text-text-secondary w-full disabled:opacity-50"
+            className="flex-1 bg-transparent px-6 py-4 font-body-md text-[#222222] focus:outline-none placeholder:text-[#222222]/70 w-full disabled:opacity-50"
             {...register("email", { 
               required: "E-Mail ist erforderlich",
               pattern: {
@@ -58,8 +58,8 @@ export function WaitlistCard({ className, ...props }: WaitlistCardProps) {
             type="submit"
             disabled={isSubmitting || isSubmitSuccessful}
             className={cn(
-              "bg-primary text-on-primary px-8 py-4 sm:py-0 rounded-full font-label-md text-label-md transition-colors uppercase tracking-widest whitespace-nowrap min-w-[170px] flex items-center justify-center",
-              (isSubmitting || isSubmitSuccessful) ? "opacity-70 cursor-not-allowed" : "hover:bg-on-surface"
+              "bg-[#D9A5B3] text-[#3B1C32] px-8 py-4 sm:py-0 rounded-full font-label-md text-label-md transition-colors uppercase tracking-widest whitespace-nowrap min-w-[170px] flex items-center justify-center",
+              (isSubmitting || isSubmitSuccessful) ? "opacity-70 cursor-not-allowed" : "hover:bg-[#E5B5B5]"
             )}
           >
             <AnimatePresence mode="wait">
@@ -69,7 +69,7 @@ export function WaitlistCard({ className, ...props }: WaitlistCardProps) {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
-                  className="w-5 h-5 border-2 border-t-transparent border-on-primary rounded-full animate-spin"
+                  className="w-5 h-5 border-2 border-t-transparent border-[#3B1C32] rounded-full animate-spin"
                 />
               ) : isSubmitSuccessful ? (
                 <motion.span

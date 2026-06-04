@@ -33,15 +33,15 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full py-section-padding px-margin-mobile md:px-margin-desktop bg-primary text-surface border-t border-primary/80 mt-auto">
+    <footer className="w-full py-section-padding px-margin-mobile md:px-margin-desktop bg-[#3B1C32] text-[#FDFBF7] border-t border-[#3B1C32]/80 mt-auto">
       <div className="max-w-container-max mx-auto">
         {/* Newsletter & Social */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 pb-12 border-b border-surface/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 pb-12 border-b border-[#FDFBF7]/20">
           <div>
             <h3 className="font-headline-md text-headline-md mb-4 font-serif">
               {tf.newsletterTitle}
             </h3>
-            <p className="font-body-md text-body-md text-surface/70 mb-6 max-w-md">
+            <p className="font-body-md text-body-md text-[#FDFBF7]/70 mb-6 max-w-md">
               {tf.newsletterDesc}
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2 max-w-md relative">
@@ -50,7 +50,7 @@ export function Footer() {
                   type="email"
                   placeholder={tf.emailPlaceholder}
                   disabled={isSubmitting || isSubmitSuccessful}
-                  className={`w-full bg-surface/5 border ${errors.email ? 'border-error ring-1 ring-error' : 'border-surface/20 focus:border-surface focus:ring-1 focus:ring-surface'} rounded-full px-6 py-3 font-body-md text-body-md focus:outline-none transition-colors placeholder:text-surface/40 text-surface disabled:opacity-50`}
+                  className={`w-full bg-[#FDFBF7]/5 border ${errors.email ? 'border-error ring-1 ring-error' : 'border-[#FDFBF7]/20 focus:border-[#FDFBF7] focus:ring-1 focus:ring-[#FDFBF7]'} rounded-full px-6 py-3 font-body-md text-body-md focus:outline-none transition-colors placeholder:text-[#FDFBF7]/40 text-[#FDFBF7] disabled:opacity-50`}
                   {...register("email", { 
                     required: "E-Mail ist erforderlich",
                     pattern: {
@@ -62,7 +62,7 @@ export function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting || isSubmitSuccessful}
-                  className="absolute right-1 top-1 bottom-1 bg-surface text-primary px-6 rounded-full font-label-md text-label-md hover:bg-surface/90 transition-colors uppercase tracking-widest disabled:opacity-100 flex items-center justify-center min-w-[140px] overflow-hidden"
+                  className="absolute right-1 top-1 bottom-1 bg-[#D9A5B3] text-[#3B1C32] px-6 rounded-full font-label-md text-label-md hover:bg-[#E5B5B5] transition-colors uppercase tracking-widest disabled:opacity-100 flex items-center justify-center min-w-[140px] overflow-hidden"
                 >
                   <AnimatePresence mode="wait">
                     {isSubmitting ? (
@@ -71,7 +71,7 @@ export function Footer() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
-                        className="w-5 h-5 border-2 border-t-transparent border-primary rounded-full animate-spin"
+                        className="w-5 h-5 border-2 border-t-transparent border-[#3B1C32] rounded-full animate-spin"
                       />
                     ) : isSubmitSuccessful ? (
                       <motion.span
@@ -82,7 +82,7 @@ export function Footer() {
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         className="flex items-center gap-2 relative"
                       >
-                        <span className="material-symbols-outlined text-[18px] text-primary">check</span>
+                        <span className="material-symbols-outlined text-[18px] text-[#3B1C32]">check</span>
                         DABEI
                         <SuccessGlow />
                       </motion.span>
@@ -100,10 +100,10 @@ export function Footer() {
                 </button>
               </div>
               {errors.email && (
-                <span className="text-error-container text-xs ml-4 mt-1 font-medium" role="alert">{errors.email.message}</span>
+                <span className="text-[#D9A5B3] text-xs ml-4 mt-1 font-medium" role="alert">{errors.email.message}</span>
               )}
               {isSubmitSuccessful && (
-                <div className="text-[12px] font-medium text-primary mt-2 ml-4 flex items-center gap-1.5 opacity-0 animate-[fade-in_0.5s_ease-out_forwards]">
+                <div className="text-[12px] font-medium text-[#D9A5B3] mt-2 ml-4 flex items-center gap-1.5 opacity-0 animate-[fade-in_0.5s_ease-out_forwards]">
                   <span className="material-symbols-outlined text-[14px]">volunteer_activism</span>
                   <span>{tf.welcome}</span>
                 </div>
@@ -111,28 +111,28 @@ export function Footer() {
             </form>
           </div>
           <div className="flex flex-col md:items-end justify-center">
-            <span className="font-label-md text-label-md text-surface/70 uppercase tracking-widest mb-4">
+            <span className="font-label-md text-label-md text-[#FDFBF7]/70 uppercase tracking-widest mb-4">
               {tf.followUs}
             </span>
             <div className="flex gap-4">
               <a
                 href="#"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-surface/5 flex items-center justify-center text-surface hover:bg-surface/20 transition-all duration-300 border border-surface/20"
+                className="w-10 h-10 rounded-full bg-[#FDFBF7]/5 flex items-center justify-center text-[#FDFBF7] hover:bg-[#FDFBF7]/20 transition-all duration-300 border border-[#FDFBF7]/20"
               >
                 <span className="material-symbols-outlined">photo_camera</span>
               </a>
               <a
                 href="#"
                 aria-label="TikTok"
-                className="w-10 h-10 rounded-full bg-surface/5 flex items-center justify-center text-surface hover:bg-surface/20 transition-all duration-300 border border-surface/20"
+                className="w-10 h-10 rounded-full bg-[#FDFBF7]/5 flex items-center justify-center text-[#FDFBF7] hover:bg-[#FDFBF7]/20 transition-all duration-300 border border-[#FDFBF7]/20"
               >
                 <span className="material-symbols-outlined">play_arrow</span>
               </a>
               <a
                 href="#"
                 aria-label="Pinterest"
-                className="w-10 h-10 rounded-full bg-surface/5 flex items-center justify-center text-surface hover:bg-surface/20 transition-all duration-300 border border-surface/20"
+                className="w-10 h-10 rounded-full bg-[#FDFBF7]/5 flex items-center justify-center text-[#FDFBF7] hover:bg-[#FDFBF7]/20 transition-all duration-300 border border-[#FDFBF7]/20"
               >
                 <span className="material-symbols-outlined">push_pin</span>
               </a>
@@ -153,35 +153,35 @@ export function Footer() {
                 viewBox="0 0 24 24" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-surface transition-transform duration-300 group-hover:rotate-12"
+                className="text-[#FDFBF7] transition-transform duration-300 group-hover:rotate-12"
               >
                 <path d="M12.4 2.1C18 2.1 22.5 6.6 22.5 12.2C22.5 17.8 18 22.3 12.4 22.3C10.7 22.3 9.1 21.9 7.7 21.1C11.5 20.3 14.4 16.9 14.4 12.8C14.4 8.7 11.5 5.3 7.7 4.5C9.1 3.7 10.7 3.3 12.4 2.1Z" fill="currentColor"/>
               </svg>
-              <span className="font-headline-lg text-headline-lg text-surface italic">Talia Boutique</span>
+              <span className="font-headline-lg text-headline-lg text-[#FDFBF7] italic">Talia Boutique</span>
             </Link>
           </div>
           
           <div className="flex flex-col gap-3">
-            <h4 className="font-label-sm text-surface/50 uppercase tracking-widest mb-2">{tf.discover}</h4>
-            <Link href="/lookbook" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tn.lookbook}</Link>
-            <Link href="/journal" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tn.journal}</Link>
-            <Link href="/reviews" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tn.reviews}</Link>
+            <h4 className="font-label-sm text-[#FDFBF7]/50 uppercase tracking-widest mb-2">{tf.discover}</h4>
+            <Link href="/lookbook" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tn.lookbook}</Link>
+            <Link href="/journal" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tn.journal}</Link>
+            <Link href="/reviews" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tn.reviews}</Link>
           </div>
 
           <div className="flex flex-col gap-3">
-            <h4 className="font-label-sm text-surface/50 uppercase tracking-widest mb-2">{tf.legalHeader}</h4>
-            <Link href="/impressum" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tf.legal.imprint}</Link>
-            <Link href="/datenschutz" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tf.legal.privacy}</Link>
-            <Link href="/agb" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tf.legal.terms}</Link>
-            <Link href="/widerruf" className="font-body-md text-body-md text-surface/70 hover:text-surface transition-colors">{tf.legal.revocation}</Link>
+            <h4 className="font-label-sm text-[#FDFBF7]/50 uppercase tracking-widest mb-2">{tf.legalHeader}</h4>
+            <Link href="/impressum" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tf.legal.imprint}</Link>
+            <Link href="/datenschutz" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tf.legal.privacy}</Link>
+            <Link href="/agb" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tf.legal.terms}</Link>
+            <Link href="/widerruf" className="font-body-md text-body-md text-[#FDFBF7]/70 hover:text-[#D9A5B3] transition-colors">{tf.legal.revocation}</Link>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-surface/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-label-sm text-label-sm text-surface/50 uppercase tracking-widest text-center md:text-left">
+        <div className="mt-16 pt-8 border-t border-[#FDFBF7]/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-label-sm text-label-sm text-[#FDFBF7]/50 uppercase tracking-widest text-center md:text-left">
             Talia Boutique • Bahnhofstraße 1, 35576 Wetzlar • Tel: 06441 9637730
           </p>
-          <p className="font-label-sm text-label-sm text-surface/50 uppercase tracking-widest text-center md:text-right">
+          <p className="font-label-sm text-label-sm text-[#FDFBF7]/50 uppercase tracking-widest text-center md:text-right">
             © 2026 Talia Boutique. {tf.rights} {tf.openingHours}
           </p>
         </div>

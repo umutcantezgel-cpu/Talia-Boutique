@@ -25,7 +25,7 @@ export function LegalLayout({ children, title }: { children: React.ReactNode, ti
         <aside className="lg:w-1/4 shrink-0">
           <div className="sticky top-[140px]">
             <Breadcrumbs items={[{ label: title }]} className="mb-8" />
-            <h2 className="font-label-md text-primary uppercase tracking-widest mb-8">Rechtliches</h2>
+            <h2 className="font-label-md text-[#D9A5B3] uppercase tracking-widest mb-8">Rechtliches</h2>
             <nav className="flex flex-col gap-4">
               {LEGAL_LINKS.map(link => {
                 const isActive = pathname === link.href;
@@ -35,7 +35,7 @@ export function LegalLayout({ children, title }: { children: React.ReactNode, ti
                     href={link.href}
                     className={cn(
                       "font-body-md transition-colors block",
-                      isActive ? "text-primary font-medium" : "text-text-secondary hover:text-on-surface"
+                      isActive ? "text-[#D9A5B3] font-medium" : "text-[#222222]/70 hover:text-[#3B1C32]"
                     )}
                   >
                     {link.label}
@@ -52,8 +52,8 @@ export function LegalLayout({ children, title }: { children: React.ReactNode, ti
           transition={{ duration: 0.6 }}
           className="lg:w-3/4 max-w-3xl"
         >
-          <h1 className="font-display-md text-4xl text-on-surface mb-12 font-serif">{title}</h1>
-          <div className="prose prose-nur max-w-none prose-p:text-text-secondary prose-p:font-body-md prose-headings:font-serif prose-headings:font-normal prose-headings:text-on-surface prose-a:text-primary hover:prose-a:text-on-surface">
+          <h1 className="font-display-md text-4xl text-[#3B1C32] mb-12 font-serif">{title}</h1>
+          <div className="prose prose-nur max-w-none prose-p:text-[#222222]/70 prose-p:font-body-md prose-headings:font-serif prose-headings:font-normal prose-headings:text-[#3B1C32] prose-a:text-[#D9A5B3] hover:prose-a:text-[#3B1C32]">
             {children}
           </div>
         </motion.div>
