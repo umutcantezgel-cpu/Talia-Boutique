@@ -6,10 +6,10 @@ import { useLanguage } from "@/contexts/language-context";
 import { getTranslations } from "@/lib/i18n/translations";
 
 const MOCK_REVIEWS = [
-  { id: 1, name: "Aisha M.", text: "Der Gebetsteppich hat eine unglaubliche Qualität. Er ist jeden Tag in Benutzung und sieht aus wie neu. Die Handarbeit aus Istanbul ist wirklich spürbar.", rating: 5, date: "12. Mai 2026", type: "text" },
-  { id: 2, name: "Sarah K.", text: "Die Koranhülle aus feinstem Satin ist ein Kunstwerk. Ein wunderschönes Geschenk zu Ramadan.", rating: 5, date: "08. April 2026", type: "text" },
+  { id: 1, name: "Kateryna Osypova", text: "Gute Qualität und schöne Beratung 🥰", rating: 5, date: "vor 2 Jahren", type: "text" },
+  { id: 2, name: "Abdurrahman Altuner", text: "Sehr nette Inhaber und beste Qualität", rating: 5, date: "vor 2 Jahren", type: "text" },
   { id: 3, name: "Instagram Story", text: "", rating: 5, date: "Vor 2 Tagen", type: "social", imagePlaceholder: true },
-  { id: 4, name: "Yusuf T.", text: "Perfekt designte Stücke. Sehr elegant und zeitlos. Die Verpackung allein war ein Erlebnis.", rating: 5, date: "28. März 2026", type: "text" },
+  { id: 4, name: "Jeewan Sharma", text: "Gut..", rating: 4, date: "vor 4 Jahren", type: "text" },
   { id: 5, name: "TikTok Video", text: "", rating: 5, date: "Letzte Woche", type: "social", imagePlaceholder: true },
   { id: 6, name: "Meryem A.", text: "Habe lange nach hochwertigem Islamic Interior gesucht und es endlich bei Nur gefunden. Alhamdulillah für diese Manufaktur.", rating: 5, date: "15. Februar 2026", type: "text" },
 ];

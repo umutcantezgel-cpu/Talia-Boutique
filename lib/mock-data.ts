@@ -31,21 +31,21 @@ export const MOCK_SNEAK_PEEKS: SneakPeek[] = [
 export const MOCK_TESTIMONIALS = [
     {
         id: "t1",
-        name: "Kateryna O.",
-        role: "Kundin",
-        content: "Gute Qualität und schöne Beratung 🥰 Die Auswahl ist unglaublich hochwertig und stilvoll."
+        name: "Kateryna Osypova",
+        role: "Google Rezension",
+        content: "Gute Qualität und schöne Beratung 🥰"
     },
     {
         id: "t2",
-        name: "Abdurrahman A.",
-        role: "Kunde",
-        content: "Sehr nette Inhaber und beste Qualität. Ein echter Geheimtipp in Wetzlar für alle, die Premium-Mode schätzen."
+        name: "Abdurrahman Altuner",
+        role: "Google Rezension",
+        content: "Sehr nette Inhaber und beste Qualität"
     },
     {
         id: "t3",
-        name: "Jeewan S.",
-        role: "Kunde",
-        content: "Gut.. Exzellenter Service und wunderschöne Stücke. Komme immer wieder gerne."
+        name: "Jeewan Sharma",
+        role: "Google Rezension",
+        content: "Gut.."
     }
 ];
 
