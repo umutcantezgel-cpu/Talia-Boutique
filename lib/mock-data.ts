@@ -81,6 +81,13 @@ export const MOCK_INSTAGRAM = [
     { id: "ig10", video: "/videos/video10.mp4", link: "#" },
     { id: "ig11", video: "/videos/video11.mp4", link: "#" },
     { id: "ig12", video: "/videos/video12.mp4", link: "#" },
+    { id: "ig13", image: "/images/ig1.jpeg", link: "#" },
+    { id: "ig14", image: "/images/ig2.jpeg", link: "#" },
+    { id: "ig15", image: "/images/ig3.jpeg", link: "#" },
+    { id: "ig16", image: "/images/ig4.jpeg", link: "#" },
+    { id: "ig17", image: "/images/ig5.jpeg", link: "#" },
+    { id: "ig18", image: "/images/ig6.jpeg", link: "#" },
+    { id: "ig19", image: "/images/ig7.jpeg", link: "#" },
 ];
 
 export const MOCK_JOURNAL: JournalArticle[] = [

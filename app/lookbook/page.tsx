@@ -13,6 +13,12 @@ const DRAG_ITEMS = [
   { id: 4, title: "Sabr", top: "15%", left: "75%", width: "225px", height: "400px", zIndex: 15, product: "Samt Hülle", src: "/videos/video4.mp4" },
   { id: 5, title: "Heritage", top: "50%", left: "80%", width: "315px", height: "560px", zIndex: 5, product: "Gebetsteppich", src: "/videos/video5.mp4" },
   { id: 6, title: "Light", top: "80%", left: "55%", width: "270px", height: "480px", zIndex: 20, product: "Signature Box", src: "/videos/video6.mp4" },
+  { id: 7, title: "Elegance", top: "25%", left: "35%", width: "270px", height: "480px", zIndex: 18, product: "Abendkleid Noir", src: "/videos/video7.mp4" },
+  { id: 8, title: "Boutique Vibe", top: "70%", left: "40%", width: "315px", height: "560px", zIndex: 11, product: "Premium Store", src: "/videos/video8.mp4" },
+  { id: 9, title: "Pure Silk", top: "40%", left: "65%", width: "225px", height: "400px", zIndex: 14, product: "Seiden Kollektion", src: "/videos/video9.mp4" },
+  { id: 10, title: "Wetzlar Exclusives", top: "85%", left: "25%", width: "270px", height: "480px", zIndex: 22, product: "Local Curated", src: "/videos/video10.mp4" },
+  { id: 11, title: "Details", top: "10%", left: "55%", width: "315px", height: "560px", zIndex: 9, product: "Accessoires", src: "/videos/video11.mp4" },
+  { id: 12, title: "Sartorial", top: "65%", left: "85%", width: "270px", height: "480px", zIndex: 16, product: "Bespoke Fit", src: "/videos/video12.mp4" },
 ];
 
 export default function LookbookPage() {
