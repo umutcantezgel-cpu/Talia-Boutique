@@ -12,6 +12,7 @@ export default function ImpressumPage() {
       <p className="font-body-md text-[#222222]/70 mb-8">
         Angaben gemäß § 5 TMG:<br />
         Talia Boutique<br />
+        Inhaberin: Müge Yüceel<br />
         Bahnhofstraße 1<br />
         35576 Wetzlar<br />
         Deutschland
@@ -20,13 +21,13 @@ export default function ImpressumPage() {
       <h2>Kontakt</h2>
       <p className="font-body-md text-[#222222]/70 mb-8">
         Telefon: 06441 9637730<br />
-        E-Mail: info@talia-boutique.de
+        E-Mail: mugecivelek17@gmail.com
       </p>
 
       <h2>Umsatzsteuer-ID</h2>
       <p className="font-body-md text-[#222222]/70 mb-8">
         Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-        DE [HIER DEINE UST-ID EINTRAGEN]
+        (wird nachgereicht / falls zutreffend)
       </p>
 
       <h2>EU-Streitschlichtung</h2>

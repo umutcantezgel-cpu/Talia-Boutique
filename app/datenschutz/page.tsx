@@ -14,6 +14,17 @@ export default function DatenschutzPage() {
         Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
       </p>
 
+      <h3>Hinweis zur verantwortlichen Stelle</h3>
+      <p>
+        Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br />
+        Talia Boutique<br />
+        Inhaberin: Müge Yüceel<br />
+        Bahnhofstraße 1<br />
+        35576 Wetzlar<br />
+        Telefon: 06441 9637730<br />
+        E-Mail: mugecivelek17@gmail.com
+      </p>
+
       <h2>2. Hosting und Server-Log-Files</h2>
       <p>
         Unsere Website wird bei einem externen Dienstleister gehostet. Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Files, die Ihr Browser automatisch an uns übermittelt. Dies sind u.a. Browsertyp/-version, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners und die Uhrzeit der Serveranfrage.

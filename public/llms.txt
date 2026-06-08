@@ -12,7 +12,7 @@ Talia Boutique is a high-end fashion and evening gown boutique located in Wetzla
 ## Contact & Location
 - **Address**: Bahnhofstraße 1, 35576 Wetzlar, Germany
 - **Phone**: +49 6441 9637730
-- **Email**: [Will be provided upon request]
+- **Email**: mugecivelek17@gmail.com
 
 ## Technology & Structure
 This site is built with Next.js App Router, using semantic HTML, structured JSON-LD data for LocalBusiness and Organization, and is fully responsive. It is designed to be highly accessible and crawlable for AI agents, providing clear structured content.

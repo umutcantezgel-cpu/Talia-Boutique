@@ -16,7 +16,7 @@ export default function AGBPage() {
 
       <h2>2. Vertragspartner und Vertragsschluss</h2>
       <p>
-        Der Kaufvertrag kommt zustande mit der Talia Boutique. Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar. Durch Anklicken des Bestellbuttons geben Sie eine verbindliche Bestellung der im Warenkorb enthaltenen Waren ab.
+        Der Kaufvertrag kommt zustande mit der Talia Boutique, Inhaberin Müge Yüceel. Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar. Durch Anklicken des Bestellbuttons geben Sie eine verbindliche Bestellung der im Warenkorb enthaltenen Waren ab.
       </p>
 
       <h2>3. Preise und Vorbestellungen (Pre-Order)</h2>
