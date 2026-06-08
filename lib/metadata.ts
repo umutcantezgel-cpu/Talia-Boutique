@@ -41,16 +41,8 @@ export function constructMetadata({
       images: [image],
       creator: "@taliaboutique",
     },
-    icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon-16x16.png",
-      apple: "/apple-touch-icon.png",
-    },
-    ...(noIndex && {
-      robots: {
-        index: false,
-        follow: false,
-      },
-    }),
+    robots: noIndex 
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
   };
 }

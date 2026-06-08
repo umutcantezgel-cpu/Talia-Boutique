@@ -36,7 +36,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       "@type": "Organization",
       "name": "Talia Boutique",
       "url": "https://talia-boutique.de",
-      "logo": "https://talia-boutique.de/logo.svg",
+      "logo": "https://talia-boutique.de/logo-talia.svg",
       "description": "Licht für deine Seele. Premium Islamic Lifestyle und Hochzeitsmode aus Wetzlar."
     },
     {
