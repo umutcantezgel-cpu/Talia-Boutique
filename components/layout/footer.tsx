@@ -150,7 +150,7 @@ export function Footer() {
               <img 
                 src="/logo-talia.svg" 
                 alt="Talia Boutique Logo" 
-                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105 object-contain brightness-0 invert" 
+                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105 object-contain invert mix-blend-screen" 
               />
             </Link>
           </div>

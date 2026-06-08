@@ -94,7 +94,7 @@ export function Header() {
                 <img 
                   src="/logo-talia.svg" 
                   alt="Talia Boutique Logo" 
-                  className="h-8 md:h-10 w-auto transition-transform duration-500 group-hover:scale-105 object-contain"
+                  className="h-8 md:h-10 w-auto transition-transform duration-500 group-hover:scale-105 object-contain mix-blend-multiply"
                 />
               </Link>
             </Magnetic>
