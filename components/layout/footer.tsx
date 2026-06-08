@@ -147,17 +147,11 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2 group w-fit"
             >
-              <svg 
-                width="32" 
-                height="32" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-[#FDFBF7] transition-transform duration-300 group-hover:rotate-12"
-              >
-                <path d="M12.4 2.1C18 2.1 22.5 6.6 22.5 12.2C22.5 17.8 18 22.3 12.4 22.3C10.7 22.3 9.1 21.9 7.7 21.1C11.5 20.3 14.4 16.9 14.4 12.8C14.4 8.7 11.5 5.3 7.7 4.5C9.1 3.7 10.7 3.3 12.4 2.1Z" fill="currentColor"/>
-              </svg>
-              <span className="font-headline-lg text-headline-lg text-[#FDFBF7] italic">Talia Boutique</span>
+              <img 
+                src="/logo-talia.svg" 
+                alt="Talia Boutique Logo" 
+                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105 object-contain brightness-0 invert" 
+              />
             </Link>
           </div>
           

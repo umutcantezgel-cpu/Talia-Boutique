@@ -91,9 +91,11 @@ export function Header() {
                 href="/"
                 className="flex-none flex items-center justify-center gap-3 group"
               >
-                <span className="font-headline-md text-2xl md:text-3xl font-medium text-[#3B1C32] tracking-tight uppercase tracking-widest transition-transform duration-500 group-hover:scale-105">
-                  Talia Boutique
-                </span>
+                <img 
+                  src="/logo-talia.svg" 
+                  alt="Talia Boutique Logo" 
+                  className="h-8 md:h-10 w-auto transition-transform duration-500 group-hover:scale-105 object-contain"
+                />
               </Link>
             </Magnetic>
           </motion.div>
