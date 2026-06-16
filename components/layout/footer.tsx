@@ -116,25 +116,13 @@ export function Footer() {
             </span>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/boutique.talia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full bg-[#FDFBF7]/5 flex items-center justify-center text-[#FDFBF7] hover:bg-[#FDFBF7]/20 transition-all duration-300 border border-[#FDFBF7]/20"
               >
                 <span className="material-symbols-outlined">photo_camera</span>
-              </a>
-              <a
-                href="#"
-                aria-label="TikTok"
-                className="w-10 h-10 rounded-full bg-[#FDFBF7]/5 flex items-center justify-center text-[#FDFBF7] hover:bg-[#FDFBF7]/20 transition-all duration-300 border border-[#FDFBF7]/20"
-              >
-                <span className="material-symbols-outlined">play_arrow</span>
-              </a>
-              <a
-                href="#"
-                aria-label="Pinterest"
-                className="w-10 h-10 rounded-full bg-[#FDFBF7]/5 flex items-center justify-center text-[#FDFBF7] hover:bg-[#FDFBF7]/20 transition-all duration-300 border border-[#FDFBF7]/20"
-              >
-                <span className="material-symbols-outlined">push_pin</span>
               </a>
             </div>
           </div>
