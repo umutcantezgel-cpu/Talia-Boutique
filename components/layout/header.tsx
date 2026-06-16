@@ -92,9 +92,9 @@ export function Header() {
                 className="flex-none flex items-center justify-center gap-3 group"
               >
                 <img 
-                  src="/logo-talia.svg" 
+                  src="/logo-talia.png" 
                   alt="Talia Boutique Logo" 
-                  className="h-8 md:h-10 w-auto transition-transform duration-500 group-hover:scale-105 object-contain mix-blend-multiply"
+                  className="h-12 md:h-16 w-auto transition-transform duration-500 group-hover:scale-105 object-contain"
                 />
               </Link>
             </Magnetic>

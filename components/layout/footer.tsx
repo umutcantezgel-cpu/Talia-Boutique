@@ -148,9 +148,9 @@ export function Footer() {
               className="flex items-center gap-2 group w-fit"
             >
               <img 
-                src="/logo-talia.svg" 
+                src="/logo-talia.png" 
                 alt="Talia Boutique Logo" 
-                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105 object-contain invert mix-blend-screen" 
+                className="h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" 
               />
             </Link>
           </div>
