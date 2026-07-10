@@ -22,6 +22,11 @@ export default function Home() {
         "description": "Entdecke exklusive Premium-Kollektionen, Abendkleider und Hochzeitsmode in der Talia Boutique Wetzlar.",
         "publisher": {
           "@id": "https://taliaboutique.de/#organization"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "Coday Web Agency",
+          "url": "https://www.codayweb.de/"
         }
       },
       {

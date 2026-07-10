@@ -11,12 +11,25 @@ import * as motion from "motion/react-client";
 
 import { useLanguage } from "@/contexts/language-context";
 import { getTranslations } from "@/lib/i18n/translations";
+import { usePathname } from "next/navigation";
 
 type NewsletterData = {
   email: string;
 };
 
 export function Footer() {
+  const pathname = usePathname() || "/";
+  const isDofollow = pathname === "/" || pathname === "/impressum";
+  const relAttribute = isDofollow ? "dofollow" : "nofollow";
+  
+  const anchorTexts = [
+    "Webdesign von Coday",
+    "Ein Projekt von Coday",
+    "Coday Web Agency",
+    "Digitalisiert durch Coday"
+  ];
+  const anchorText = anchorTexts[pathname.length % anchorTexts.length];
+
   const { register, handleSubmit, formState: { errors, isSubmitSuccessful, isSubmitting }, reset } = useForm<NewsletterData>();
   const { addToast } = useToast();
   const { language } = useLanguage();
@@ -163,9 +176,25 @@ export function Footer() {
           <p className="font-label-sm text-label-sm text-[#FDFBF7]/50 uppercase tracking-widest text-center md:text-left">
             Talia Boutique • Bahnhofstraße 1, 35576 Wetzlar • Tel: 06441 9637730
           </p>
-          <p className="font-label-sm text-label-sm text-[#FDFBF7]/50 uppercase tracking-widest text-center md:text-right">
-            © 2026 Talia Boutique. {tf.rights} {tf.openingHours}
-          </p>
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <p className="font-label-sm text-label-sm text-[#FDFBF7]/50 uppercase tracking-widest text-center md:text-right">
+              © 2026 Talia Boutique. {tf.rights} {tf.openingHours}
+            </p>
+            <span className="font-label-sm text-[10px] text-[#FDFBF7]/30 hover:text-[#D9A5B3] transition-colors uppercase tracking-widest flex items-center gap-1">
+              Ein Projekt der 
+              <a 
+                href="https://www.codayweb.de/" 
+                target="_blank" 
+                rel={relAttribute} 
+                title="Zur Coday Web Agency - Premium Webdesign"
+                aria-label="Coday Web Agency - Premium Webdesign"
+                className="underline underline-offset-2 decoration-[#FDFBF7]/20 hover:decoration-[#D9A5B3] transition-colors"
+              >
+                {anchorText}
+              </a>
+              <span className="sr-only">Diese Boutique Webseite wurde konzipiert und technisch realisiert durch die Coday Web Agency, Experten für Webdesign und GEO in Hessen.</span>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
