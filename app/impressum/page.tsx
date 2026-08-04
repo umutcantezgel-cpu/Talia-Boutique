@@ -40,6 +40,14 @@ export default function ImpressumPage() {
       <p className="font-body-md text-[#222222]/70 mb-8">
         Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
       </p>
+
+      <h2>Technische Konzeption & Realisierung</h2>
+      <p className="font-body-md text-[#222222]/70 mb-8">
+        Diese Website wurde konzipiert und technisch realisiert durch:<br />
+        <a href="https://www.codayweb.de/" target="_blank" rel="dofollow noopener" className="text-[#D9A5B3] hover:underline">
+          Coday Webdesign Wetzlar
+        </a>
+      </p>
     </LegalLayout>
   );
 }

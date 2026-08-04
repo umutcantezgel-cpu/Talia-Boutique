@@ -19,8 +19,6 @@ type NewsletterData = {
 
 export function Footer() {
   const pathname = usePathname() || "/";
-  const isDofollow = pathname === "/" || pathname === "/impressum";
-  const relAttribute = isDofollow ? "dofollow" : "nofollow";
   
   const anchorTexts = [
     "Webdesign von Coday",
@@ -185,7 +183,7 @@ export function Footer() {
               <a 
                 href="https://www.codayweb.de/" 
                 target="_blank" 
-                rel={relAttribute} 
+                rel="dofollow noopener" 
                 title="Zur Coday Web Agency - Premium Webdesign"
                 aria-label="Coday Web Agency - Premium Webdesign"
                 className="underline underline-offset-2 decoration-[#FDFBF7]/20 hover:decoration-[#D9A5B3] transition-colors"
